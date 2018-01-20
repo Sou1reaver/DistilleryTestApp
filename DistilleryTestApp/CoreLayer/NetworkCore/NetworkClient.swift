@@ -57,10 +57,11 @@ extension NetworkClient: NetworkClientInput {
                           parameters: params,
                           encoding: enconding,
                           headers: headers)
-            
-            .responseData(queue: responceQueue,
+
+            .responseJSON(queue: responceQueue,
+                          options: JSONSerialization.ReadingOptions.allowFragments,
                           completionHandler: { (responce) in
-                            completionHandler?(responce.result.value, responce.result.error)
+                            completionHandler?(responce.data, responce.result.error)
                             if responce.result.error != nil {
                                 print("Error: \(responce.result.error!)")
                             }

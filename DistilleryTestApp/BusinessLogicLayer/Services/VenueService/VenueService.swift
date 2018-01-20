@@ -43,8 +43,13 @@ extension VenueService: VenueServiceInput {
                                   enconding: URLEncoding.default,
                                   headers: nil,
                                   completionHandler: { (data, error) in
-                                    let str = String(data: data!, encoding: String.Encoding.utf8) ?? ""
-                                    print(str)
+ 
+                                    do {
+                                        let searchVenueResponce = try JSONDecoder().decode(SearchVenueResponce.self, from: data!)
+                                        
+                                    } catch let error {
+                                        print(error.localizedDescription)
+                                    }
         })
     }
 }

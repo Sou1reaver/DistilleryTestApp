@@ -1,5 +1,5 @@
 //
-//  Venue.swift
+//  FoursquareIcon.swift
 //  DistilleryTestApp
 //
 //  Created by Vladimir Gordienko on 20.01.18.
@@ -9,8 +9,7 @@
 import Foundation
 
 
-struct Venue: Decodable {
-    var name: String
-    var location: VenueLocation
-    var categories: [VenueCategory]
+struct FoursquareIcon: Decodable {
+    var prefix: String
+    var suffix: String
 }
