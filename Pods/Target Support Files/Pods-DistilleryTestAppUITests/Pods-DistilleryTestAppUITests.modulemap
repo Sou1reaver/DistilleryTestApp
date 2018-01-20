@@ -1,0 +1,6 @@
+framework module Pods_DistilleryTestAppUITests {
+  umbrella header "Pods-DistilleryTestAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

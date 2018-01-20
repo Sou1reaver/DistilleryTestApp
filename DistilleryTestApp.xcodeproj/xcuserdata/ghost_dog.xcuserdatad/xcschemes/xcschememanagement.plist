@@ -7,7 +7,25 @@
 		<key>DistilleryTestApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>6ED242D620132B7A0028F982</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6ED242EA20132B7A0028F982</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6ED242F520132B7A0028F982</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
