@@ -1,5 +1,5 @@
 //
-//  VenueServiceInput.swift
+//  LocationCoordinate.swift
 //  DistilleryTestApp
 //
 //  Created by Vladimir Gordienko on 20.01.18.
@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import CoreLocation
 
 
-protocol VenueServiceInput {
-    func getVenuesFor(coordinate: LocationCoordinate, inRadius radius: Int)
+struct LocationCoordinate {
+    let latitude: Double
+    let longitude: Double
 }

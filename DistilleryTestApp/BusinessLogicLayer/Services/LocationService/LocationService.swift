@@ -25,8 +25,11 @@ class LocationService: NSObject {
 
 //MARK: - LocationServiceInput
 extension LocationService: LocationServiceInput {
-    func start() {
+    func requestAuthorization() {
         self.manager.requestWhenInUseAuthorization()
+    }
+    
+    func start() {
         self.manager.startUpdatingLocation()
     }
     
@@ -41,7 +44,7 @@ extension LocationService: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last, currentLocation.horizontalAccuracy >= 0 {
-            let coordinate = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+            let coordinate = LocationCoordinate(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
             output?.locationService(self, didUpdateLocation: coordinate)
         }
     }

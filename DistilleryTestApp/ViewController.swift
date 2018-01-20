@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    lazy var locationService: LocationServiceInput = LocationService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        VenueService().getVenuesInRadius(1000)
+        locationService.output = self
+        locationService.start()
     }
 
 
+}
+
+
+extension ViewController: LocationServiceOutput {
+    func locationService(_ service: LocationService, didUpdateLocation coordinate: LocationCoordinate) {
+        VenueService().getVenuesFor(coordinate: coordinate, inRadius: 100)
+    }
 }

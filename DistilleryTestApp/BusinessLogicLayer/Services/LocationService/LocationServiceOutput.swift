@@ -10,5 +10,5 @@ import Foundation
 import CoreLocation
 
 protocol LocationServiceOutput: class {
-    func locationService(_ manager: LocationService, didUpdateLocation coordinate: CLLocationCoordinate2D)
+    func locationService(_ service: LocationService, didUpdateLocation coordinate: LocationCoordinate)
 }

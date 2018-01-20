@@ -10,6 +10,7 @@
 		2B3467EDDCABDAEB0510FE27 /* Pods_DistilleryTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE3DB99C93EA8B3A9FEC592 /* Pods_DistilleryTestAppUITests.framework */; };
 		58926C728614A1E8A0A03107 /* Pods_DistilleryTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4267F9240B1D739C3EAFA3F /* Pods_DistilleryTestAppTests.framework */; };
 		58C2D795E8AC59EE63DF4DAA /* Pods_DistilleryTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E331B8E3F576CB287505C9 /* Pods_DistilleryTestApp.framework */; };
+		6E46E91A201375970011DD51 /* ApplicationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46E919201375970011DD51 /* ApplicationConfigurator.swift */; };
 		6E7540542013398E00F81751 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540532013398E00F81751 /* NetworkClient.swift */; };
 		6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405520133F0100F81751 /* NetworkClientInput.swift */; };
 		6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */; };
@@ -22,6 +23,7 @@
 		6E7540712013657C00F81751 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540702013657C00F81751 /* LocationService.swift */; };
 		6E75407320136B0600F81751 /* LocationServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75407220136B0600F81751 /* LocationServiceInput.swift */; };
 		6E75407520136D1500F81751 /* LocationServiceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75407420136D1500F81751 /* LocationServiceOutput.swift */; };
+		6E7540782013714900F81751 /* LocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540772013714900F81751 /* LocationCoordinate.swift */; };
 		6ED242DB20132B7A0028F982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED242DA20132B7A0028F982 /* AppDelegate.swift */; };
 		6ED242E020132B7A0028F982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED242DE20132B7A0028F982 /* Main.storyboard */; };
 		6ED242E220132B7A0028F982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED242E120132B7A0028F982 /* Assets.xcassets */; };
@@ -50,6 +52,7 @@
 /* Begin PBXFileReference section */
 		23E331B8E3F576CB287505C9 /* Pods_DistilleryTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistilleryTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62A0E39BFC80D1B7F10FAAE0 /* Pods-DistilleryTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistilleryTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DistilleryTestAppTests/Pods-DistilleryTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E46E919201375970011DD51 /* ApplicationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfigurator.swift; sourceTree = "<group>"; };
 		6E7540532013398E00F81751 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		6E75405520133F0100F81751 /* NetworkClientInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientInput.swift; sourceTree = "<group>"; };
 		6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceUrlConstants.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		6E7540702013657C00F81751 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		6E75407220136B0600F81751 /* LocationServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceInput.swift; sourceTree = "<group>"; };
 		6E75407420136D1500F81751 /* LocationServiceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceOutput.swift; sourceTree = "<group>"; };
+		6E7540772013714900F81751 /* LocationCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinate.swift; sourceTree = "<group>"; };
 		6ED242D720132B7A0028F982 /* DistilleryTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistilleryTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED242DA20132B7A0028F982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED242DF20132B7A0028F982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -186,6 +190,14 @@
 			path = LocationService;
 			sourceTree = "<group>";
 		};
+		6E7540762013712F00F81751 /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				6E7540772013714900F81751 /* LocationCoordinate.swift */,
+			);
+			path = LocationService;
+			sourceTree = "<group>";
+		};
 		6ED242CE20132B7A0028F982 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +284,7 @@
 		6ED2430C20132E050028F982 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6E7540762013712F00F81751 /* LocationService */,
 				6E75406520134D7200F81751 /* Venue */,
 			);
 			path = Models;
@@ -320,6 +333,7 @@
 		6ED2431220132E450028F982 /* ApplicationConfigurator */ = {
 			isa = PBXGroup;
 			children = (
+				6E46E919201375970011DD51 /* ApplicationConfigurator.swift */,
 			);
 			path = ApplicationConfigurator;
 			sourceTree = "<group>";
@@ -631,12 +645,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E46E91A201375970011DD51 /* ApplicationConfigurator.swift in Sources */,
 				6E75405F201347CF00F81751 /* VenueService.swift in Sources */,
 				6E75406720134D8000F81751 /* Venue.swift in Sources */,
 				6E75406A20134EC700F81751 /* NetworkClientConstants.swift in Sources */,
 				6ED242DB20132B7A0028F982 /* AppDelegate.swift in Sources */,
 				6E7540622013485600F81751 /* VenueServiceInput.swift in Sources */,
 				6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */,
+				6E7540782013714900F81751 /* LocationCoordinate.swift in Sources */,
 				6E7540712013657C00F81751 /* LocationService.swift in Sources */,
 				6E75407320136B0600F81751 /* LocationServiceInput.swift in Sources */,
 				6E75406420134D0000F81751 /* ViewController.swift in Sources */,

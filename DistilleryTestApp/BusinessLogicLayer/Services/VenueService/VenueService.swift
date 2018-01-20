@@ -20,11 +20,11 @@ struct VenueService {
         self.networkClient = NetworkClient()
     }
     
-    private func generateParameters(radius: Int) -> [String:Any] {
+    private func generateParameters(radius: Int, coordinate: LocationCoordinate) -> [String:Any] {
         let locationKey = VenueServiceApiKeys.locationKey.rawValue
         let radiusKey = VenueServiceApiKeys.radiusKey.rawValue
         
-        let params = [locationKey:"44.23, -43.654",
+        let params = [locationKey:"\(coordinate.latitude), \(coordinate.longitude)",
                       radiusKey:String(radius)]
         return params
     }
@@ -34,8 +34,8 @@ struct VenueService {
 
 extension VenueService: VenueServiceInput {
     
-    func getVenuesInRadius(_ radius: Int) {
-        let parameters = generateParameters(radius: radius)
+    func getVenuesFor(coordinate: LocationCoordinate, inRadius radius: Int) {
+        let parameters = generateParameters(radius: radius, coordinate: coordinate)
         
         networkClient.sendRequest(url: venuesSearchUrl,
                                   method: .get,
