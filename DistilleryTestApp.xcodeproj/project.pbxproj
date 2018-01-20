@@ -12,7 +12,13 @@
 		58C2D795E8AC59EE63DF4DAA /* Pods_DistilleryTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E331B8E3F576CB287505C9 /* Pods_DistilleryTestApp.framework */; };
 		6E7540542013398E00F81751 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540532013398E00F81751 /* NetworkClient.swift */; };
 		6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405520133F0100F81751 /* NetworkClientInput.swift */; };
-		6E75405C201346FB00F81751 /* NetworkClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405B201346FB00F81751 /* NetworkClientConstants.swift */; };
+		6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */; };
+		6E75405F201347CF00F81751 /* VenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405E201347CF00F81751 /* VenueService.swift */; };
+		6E7540622013485600F81751 /* VenueServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540612013485600F81751 /* VenueServiceInput.swift */; };
+		6E75406420134D0000F81751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75406320134D0000F81751 /* ViewController.swift */; };
+		6E75406720134D8000F81751 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75406620134D8000F81751 /* Venue.swift */; };
+		6E75406A20134EC700F81751 /* NetworkClientConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75406920134EC700F81751 /* NetworkClientConstants.swift */; };
+		6E75406E20135A0200F81751 /* VenueServiceApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75406D20135A0200F81751 /* VenueServiceApiKeys.swift */; };
 		6ED242DB20132B7A0028F982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED242DA20132B7A0028F982 /* AppDelegate.swift */; };
 		6ED242E020132B7A0028F982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED242DE20132B7A0028F982 /* Main.storyboard */; };
 		6ED242E220132B7A0028F982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED242E120132B7A0028F982 /* Assets.xcassets */; };
@@ -43,7 +49,13 @@
 		62A0E39BFC80D1B7F10FAAE0 /* Pods-DistilleryTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistilleryTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DistilleryTestAppTests/Pods-DistilleryTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E7540532013398E00F81751 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		6E75405520133F0100F81751 /* NetworkClientInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientInput.swift; sourceTree = "<group>"; };
-		6E75405B201346FB00F81751 /* NetworkClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientConstants.swift; sourceTree = "<group>"; };
+		6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceUrlConstants.swift; sourceTree = "<group>"; };
+		6E75405E201347CF00F81751 /* VenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueService.swift; sourceTree = "<group>"; };
+		6E7540612013485600F81751 /* VenueServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceInput.swift; sourceTree = "<group>"; };
+		6E75406320134D0000F81751 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E75406620134D8000F81751 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		6E75406920134EC700F81751 /* NetworkClientConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientConstants.swift; sourceTree = "<group>"; };
+		6E75406D20135A0200F81751 /* VenueServiceApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceApiKeys.swift; sourceTree = "<group>"; };
 		6ED242D720132B7A0028F982 /* DistilleryTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistilleryTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED242DA20132B7A0028F982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED242DF20132B7A0028F982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,19 +127,46 @@
 			path = NetworkCore;
 			sourceTree = "<group>";
 		};
-		6E754059201346D700F81751 /* CoreLayer */ = {
+		6E754059201346D700F81751 /* BusinessLogicLayer */ = {
 			isa = PBXGroup;
 			children = (
-				6E75405B201346FB00F81751 /* NetworkClientConstants.swift */,
+				6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */,
+				6E75406D20135A0200F81751 /* VenueServiceApiKeys.swift */,
 			);
-			path = CoreLayer;
+			path = BusinessLogicLayer;
 			sourceTree = "<group>";
 		};
 		6E75405D2013475600F81751 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6E7540602013483B00F81751 /* VenueService */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		6E7540602013483B00F81751 /* VenueService */ = {
+			isa = PBXGroup;
+			children = (
+				6E75405E201347CF00F81751 /* VenueService.swift */,
+				6E7540612013485600F81751 /* VenueServiceInput.swift */,
+			);
+			path = VenueService;
+			sourceTree = "<group>";
+		};
+		6E75406520134D7200F81751 /* Venue */ = {
+			isa = PBXGroup;
+			children = (
+				6E75406620134D8000F81751 /* Venue.swift */,
+			);
+			path = Venue;
+			sourceTree = "<group>";
+		};
+		6E75406820134E8500F81751 /* CoreLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6E75406920134EC700F81751 /* NetworkClientConstants.swift */,
+			);
+			path = CoreLayer;
 			sourceTree = "<group>";
 		};
 		6ED242CE20132B7A0028F982 = {
@@ -165,6 +204,7 @@
 				6ED2430920132DC40028F982 /* Resources */,
 				6ED242DE20132B7A0028F982 /* Main.storyboard */,
 				6ED242E320132B7A0028F982 /* LaunchScreen.storyboard */,
+				6E75406320134D0000F81751 /* ViewController.swift */,
 			);
 			path = DistilleryTestApp;
 			sourceTree = "<group>";
@@ -206,7 +246,8 @@
 		6ED2430B20132DF90028F982 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				6E754059201346D700F81751 /* CoreLayer */,
+				6E75406820134E8500F81751 /* CoreLayer */,
+				6E754059201346D700F81751 /* BusinessLogicLayer */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -214,6 +255,7 @@
 		6ED2430C20132E050028F982 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6E75406520134D7200F81751 /* Venue */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -572,9 +614,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E75405F201347CF00F81751 /* VenueService.swift in Sources */,
+				6E75406720134D8000F81751 /* Venue.swift in Sources */,
+				6E75406A20134EC700F81751 /* NetworkClientConstants.swift in Sources */,
 				6ED242DB20132B7A0028F982 /* AppDelegate.swift in Sources */,
-				6E75405C201346FB00F81751 /* NetworkClientConstants.swift in Sources */,
+				6E7540622013485600F81751 /* VenueServiceInput.swift in Sources */,
+				6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */,
+				6E75406420134D0000F81751 /* ViewController.swift in Sources */,
 				6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */,
+				6E75406E20135A0200F81751 /* VenueServiceApiKeys.swift in Sources */,
 				6E7540542013398E00F81751 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

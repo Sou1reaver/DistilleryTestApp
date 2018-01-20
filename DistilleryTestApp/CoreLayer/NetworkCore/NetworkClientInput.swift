@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 
 protocol NetworkClientInput {
@@ -14,5 +15,6 @@ protocol NetworkClientInput {
                      method: HTTPMethod,
                      parameters: Parameters?,
                      enconding: URLEncoding,
-                     headers: HTTPHeaders?)
+                     headers: HTTPHeaders?,
+                     completionHandler: ((_ success: Data?, _ failure: Error?) -> Void)?) 
 }

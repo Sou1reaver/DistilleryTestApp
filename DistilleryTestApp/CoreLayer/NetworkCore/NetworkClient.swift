@@ -14,8 +14,21 @@ struct NetworkClient {
     private var responceQueue: DispatchQueue {
         return DispatchQueue.global()
     }
-    private var baseUrl: String {
-        return NetworkClientConstants.baseUrl.rawValue
+    
+    private func generateDefaultParams() -> Parameters {
+        let clientIdKey = NetworkClientConstants.clientIdKey.rawValue
+        let clientIdValue = NetworkClientConstants.clientIdValue.rawValue
+        
+        let clientSecretKey = NetworkClientConstants.clientSecretKey.rawValue
+        let clientSecretValue = NetworkClientConstants.clientSecretValue.rawValue
+        
+        let versionKey = NetworkClientConstants.versionKey.rawValue
+        let versionValue = NetworkClientConstants.versionValue.rawValue
+        
+        let params: Parameters = [clientIdKey:clientIdValue,
+                                 clientSecretKey:clientSecretValue,
+                                 versionKey:versionValue]
+        return params
     }
 }
 
@@ -33,9 +46,15 @@ extension NetworkClient: NetworkClientInput {
             print("Invalid url")
             return
         }
+        
+        var params = generateDefaultParams()
+        if let inputParams = parameters {
+            params.merge(inputParams, uniquingKeysWith: {$1})
+        }
+        
         Alamofire.request(url,
                           method: method,
-                          parameters: parameters,
+                          parameters: params,
                           encoding: enconding,
                           headers: headers)
             
