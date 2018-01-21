@@ -52,7 +52,6 @@ extension VenuesLaunchRouter: ModuleConfigurator {
             return presenter
         }
         
-        
         searchVenuesVC.output = container.resolve(SearchVenuesPresenter.self, argument: searchVenuesVC)
         
         return searchVenuesVC

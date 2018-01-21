@@ -20,6 +20,7 @@ class SearchVenuesViewController: UIViewController {
         output?.setupView()
     }
 
+
 }
 
 

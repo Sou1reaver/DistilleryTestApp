@@ -13,7 +13,7 @@ struct SearchVenuesInteractor {
     private var radius: Int {
         return 1000
     }
-    private var currentCoordinate: LocationCoordinate?
+    
     private var locationService: LocationServiceInput
     private let venueService: VenueServiceInput
     var output: SearchVenuesInteractorOutput? 
@@ -23,19 +23,21 @@ struct SearchVenuesInteractor {
         locationService = LocationService()
         locationService.output = self
         locationService.requestAuthorization()
-        locationService.start()
+    }
+    
+    private func getVenuesFor(coordinate: LocationCoordinate) {
+        venueService.getVenuesFor(coordinate: coordinate,
+                                  inRadius: radius,
+                                  completionHandler: { (venues) in
+                                    self.output?.didUpdateVenueList(venues: venues)
+        })
     }
     
 }
 
 extension SearchVenuesInteractor: SearchVenuesInteractorInput {
     func updateVenues() {
-        guard let coor = locationService.lastCoordinate else { return }
-        venueService.getVenuesFor(coordinate: coor,
-                                  inRadius: radius,
-                                  completionHandler: { (venues) in
-                                    self.output?.didUpdateVenueList(venues: venues)
-        })
+        locationService.start()
     }
 }
 
@@ -43,6 +45,7 @@ extension SearchVenuesInteractor: SearchVenuesInteractorInput {
 // MARK: - LocationServiceOutput
 extension SearchVenuesInteractor: LocationServiceOutput {
     func locationService(_ service: LocationService, didUpdateLocation coordinate: LocationCoordinate) {
-       
+        getVenuesFor(coordinate: coordinate)
+        locationService.stop()
     }
 }
