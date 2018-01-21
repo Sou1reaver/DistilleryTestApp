@@ -12,7 +12,7 @@ import CoreLocation
 
 class LocationService: NSObject {
     private lazy var manager = createManager()
-    weak var output: LocationServiceOutput?
+    var output: LocationServiceOutput?
     
     private func createManager() -> CLLocationManager {
         let manager  = CLLocationManager()

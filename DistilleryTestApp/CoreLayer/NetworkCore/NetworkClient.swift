@@ -12,7 +12,7 @@ import Alamofire
 
 struct NetworkClient {
     private var responceQueue: DispatchQueue {
-        return DispatchQueue.global()
+        return DispatchQueue(label: "response-queue", qos: .utility, attributes: [.concurrent])
     }
     
     private func generateDefaultParams() -> Parameters {
@@ -40,7 +40,8 @@ extension NetworkClient: NetworkClientInput {
                      parameters: Parameters?,
                      enconding: URLEncoding,
                      headers: HTTPHeaders?,
-                     completionHandler: ((_ success: Data?, _ failure: Error?) -> Void)?) {
+                     success: ((_ data: Data) -> Void)?,
+                     failure: ((_ error: Error) -> Void)?) {
         
         guard let url = URL(string: url) else {
             print("Invalid url")
@@ -61,9 +62,11 @@ extension NetworkClient: NetworkClientInput {
             .responseJSON(queue: responceQueue,
                           options: JSONSerialization.ReadingOptions.allowFragments,
                           completionHandler: { (responce) in
-                            completionHandler?(responce.data, responce.result.error)
-                            if responce.result.error != nil {
-                                print("Error: \(responce.result.error!)")
+                            if let data = responce.data {
+                                success?(data)
+                            }
+                            if let error = responce.result.error {
+                                print("Error: \(error)")
                             }
             })
     }

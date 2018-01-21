@@ -16,5 +16,6 @@ protocol NetworkClientInput {
                      parameters: Parameters?,
                      enconding: URLEncoding,
                      headers: HTTPHeaders?,
-                     completionHandler: ((_ success: Data?, _ failure: Error?) -> Void)?) 
+                     success: ((_ data: Data) -> Void)?,
+                     failure: ((_ error: Error) -> Void)?)
 }

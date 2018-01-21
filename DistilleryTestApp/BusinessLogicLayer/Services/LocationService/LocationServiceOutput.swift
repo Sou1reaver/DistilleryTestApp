@@ -9,6 +9,6 @@
 import Foundation
 import CoreLocation
 
-protocol LocationServiceOutput: class {
-    func locationService(_ service: LocationService, didUpdateLocation coordinate: LocationCoordinate)
+protocol LocationServiceOutput {
+    mutating func locationService(_ service: LocationService, didUpdateLocation coordinate: LocationCoordinate)
 }

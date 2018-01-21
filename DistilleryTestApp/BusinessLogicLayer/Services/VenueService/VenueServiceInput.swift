@@ -11,5 +11,5 @@ import CoreLocation
 
 
 protocol VenueServiceInput {
-    func getVenuesFor(coordinate: LocationCoordinate, inRadius radius: Int)
+    func getVenuesFor(coordinate: LocationCoordinate, inRadius radius: Int, completionHandler: ((_ venues: [Venue]) -> Void)?)
 }
