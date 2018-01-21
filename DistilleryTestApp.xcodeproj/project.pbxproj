@@ -19,6 +19,11 @@
 		6E7237B02014877A00068497 /* SearchVenuesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237AF2014877A00068497 /* SearchVenuesInteractor.swift */; };
 		6E7237B220148D2200068497 /* SearchVenuesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237B120148D2200068497 /* SearchVenuesInteractorInput.swift */; };
 		6E7237B420148DAE00068497 /* SearchVenuesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237B320148DAE00068497 /* SearchVenuesInteractorOutput.swift */; };
+		6E7237B62014907600068497 /* SearchVenuesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237B52014907600068497 /* SearchVenuesPresenter.swift */; };
+		6E7237B8201490BD00068497 /* SearchVenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237B7201490BD00068497 /* SearchVenuesViewController.swift */; };
+		6E7237BB201491A500068497 /* SearchVenuesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237BA201491A500068497 /* SearchVenuesViewOutput.swift */; };
+		6E7237C22014976900068497 /* SearchVenuesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237C12014976900068497 /* SearchVenuesViewInput.swift */; };
+		6E7237C42014987E00068497 /* SearchVenuesPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237C32014987E00068497 /* SearchVenuesPresenterOutput.swift */; };
 		6E7540542013398E00F81751 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540532013398E00F81751 /* NetworkClient.swift */; };
 		6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405520133F0100F81751 /* NetworkClientInput.swift */; };
 		6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */; };
@@ -67,6 +72,11 @@
 		6E7237AF2014877A00068497 /* SearchVenuesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesInteractor.swift; sourceTree = "<group>"; };
 		6E7237B120148D2200068497 /* SearchVenuesInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesInteractorInput.swift; sourceTree = "<group>"; };
 		6E7237B320148DAE00068497 /* SearchVenuesInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesInteractorOutput.swift; sourceTree = "<group>"; };
+		6E7237B52014907600068497 /* SearchVenuesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesPresenter.swift; sourceTree = "<group>"; };
+		6E7237B7201490BD00068497 /* SearchVenuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesViewController.swift; sourceTree = "<group>"; };
+		6E7237BA201491A500068497 /* SearchVenuesViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesViewOutput.swift; sourceTree = "<group>"; };
+		6E7237C12014976900068497 /* SearchVenuesViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesViewInput.swift; sourceTree = "<group>"; };
+		6E7237C32014987E00068497 /* SearchVenuesPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesPresenterOutput.swift; sourceTree = "<group>"; };
 		6E7540532013398E00F81751 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		6E75405520133F0100F81751 /* NetworkClientInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientInput.swift; sourceTree = "<group>"; };
 		6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceUrlConstants.swift; sourceTree = "<group>"; };
@@ -195,6 +205,9 @@
 		6E7237AB201486FA00068497 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6E7237B7201490BD00068497 /* SearchVenuesViewController.swift */,
+				6E7237C12014976900068497 /* SearchVenuesViewInput.swift */,
+				6E7237BA201491A500068497 /* SearchVenuesViewOutput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +222,8 @@
 		6E7237AD2014870800068497 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				6E7237B52014907600068497 /* SearchVenuesPresenter.swift */,
+				6E7237C32014987E00068497 /* SearchVenuesPresenterOutput.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -750,6 +765,8 @@
 				6E7237B02014877A00068497 /* SearchVenuesInteractor.swift in Sources */,
 				6E75406A20134EC700F81751 /* NetworkClientConstants.swift in Sources */,
 				6E588DBB20138A6D006F27E2 /* SearchVenueResponce.swift in Sources */,
+				6E7237C22014976900068497 /* SearchVenuesViewInput.swift in Sources */,
+				6E7237B8201490BD00068497 /* SearchVenuesViewController.swift in Sources */,
 				6ED242DB20132B7A0028F982 /* AppDelegate.swift in Sources */,
 				6E7540622013485600F81751 /* VenueServiceInput.swift in Sources */,
 				6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */,
@@ -757,13 +774,16 @@
 				6E7540782013714900F81751 /* LocationCoordinate.swift in Sources */,
 				6E588DC120139B7D006F27E2 /* FoursquareIcon.swift in Sources */,
 				6E7540712013657C00F81751 /* LocationService.swift in Sources */,
+				6E7237BB201491A500068497 /* SearchVenuesViewOutput.swift in Sources */,
 				6E75407320136B0600F81751 /* LocationServiceInput.swift in Sources */,
 				6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */,
+				6E7237B62014907600068497 /* SearchVenuesPresenter.swift in Sources */,
 				6E75407520136D1500F81751 /* LocationServiceOutput.swift in Sources */,
 				6E588DBD201392F0006F27E2 /* VenueLocation.swift in Sources */,
 				6E75406E20135A0200F81751 /* VenueServiceApiKeys.swift in Sources */,
 				6E7540542013398E00F81751 /* NetworkClient.swift in Sources */,
 				6E588DBF201395B3006F27E2 /* VenueCategory.swift in Sources */,
+				6E7237C42014987E00068497 /* SearchVenuesPresenterOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
