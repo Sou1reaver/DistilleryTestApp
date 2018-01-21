@@ -24,6 +24,8 @@
 		6E7237BB201491A500068497 /* SearchVenuesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237BA201491A500068497 /* SearchVenuesViewOutput.swift */; };
 		6E7237C22014976900068497 /* SearchVenuesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237C12014976900068497 /* SearchVenuesViewInput.swift */; };
 		6E7237C42014987E00068497 /* SearchVenuesPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237C32014987E00068497 /* SearchVenuesPresenterOutput.swift */; };
+		6E7237C92014997300068497 /* VenuesLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237C82014997300068497 /* VenuesLaunchRouter.swift */; };
+		6E7237CC20149A4500068497 /* ModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237CB20149A4500068497 /* ModuleConfigurator.swift */; };
 		6E7540542013398E00F81751 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540532013398E00F81751 /* NetworkClient.swift */; };
 		6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405520133F0100F81751 /* NetworkClientInput.swift */; };
 		6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */; };
@@ -77,6 +79,8 @@
 		6E7237BA201491A500068497 /* SearchVenuesViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesViewOutput.swift; sourceTree = "<group>"; };
 		6E7237C12014976900068497 /* SearchVenuesViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesViewInput.swift; sourceTree = "<group>"; };
 		6E7237C32014987E00068497 /* SearchVenuesPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesPresenterOutput.swift; sourceTree = "<group>"; };
+		6E7237C82014997300068497 /* VenuesLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesLaunchRouter.swift; sourceTree = "<group>"; };
+		6E7237CB20149A4500068497 /* ModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleConfigurator.swift; sourceTree = "<group>"; };
 		6E7540532013398E00F81751 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		6E75405520133F0100F81751 /* NetworkClientInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientInput.swift; sourceTree = "<group>"; };
 		6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceUrlConstants.swift; sourceTree = "<group>"; };
@@ -236,6 +240,38 @@
 				6E7237B320148DAE00068497 /* SearchVenuesInteractorOutput.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		6E7237C52014992600068497 /* LaunchSystem */ = {
+			isa = PBXGroup;
+			children = (
+				6E7237C62014992F00068497 /* Routers */,
+			);
+			path = LaunchSystem;
+			sourceTree = "<group>";
+		};
+		6E7237C62014992F00068497 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6E7237C72014995500068497 /* VenuesLaunchRouter */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6E7237C72014995500068497 /* VenuesLaunchRouter */ = {
+			isa = PBXGroup;
+			children = (
+				6E7237C82014997300068497 /* VenuesLaunchRouter.swift */,
+			);
+			path = VenuesLaunchRouter;
+			sourceTree = "<group>";
+		};
+		6E7237CA20149A2D00068497 /* ModuleConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				6E7237CB20149A4500068497 /* ModuleConfigurator.swift */,
+			);
+			path = ModuleConfiguration;
 			sourceTree = "<group>";
 		};
 		6E7540522013368900F81751 /* NetworkCore */ = {
@@ -404,6 +440,7 @@
 		6ED2430D20132E0F0028F982 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				6E7237CA20149A2D00068497 /* ModuleConfiguration */,
 				6E7540522013368900F81751 /* NetworkCore */,
 			);
 			path = CoreLayer;
@@ -429,6 +466,7 @@
 		6ED2431020132E2D0028F982 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				6E7237C52014992600068497 /* LaunchSystem */,
 				6ED2431120132E370028F982 /* AppDelegates */,
 				6ED2431220132E450028F982 /* ApplicationConfigurator */,
 			);
@@ -758,10 +796,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7237CC20149A4500068497 /* ModuleConfigurator.swift in Sources */,
 				6E46E91A201375970011DD51 /* ApplicationConfigurator.swift in Sources */,
 				6E75405F201347CF00F81751 /* VenueService.swift in Sources */,
 				6E7237B420148DAE00068497 /* SearchVenuesInteractorOutput.swift in Sources */,
 				6E75406720134D8000F81751 /* Venue.swift in Sources */,
+				6E7237C92014997300068497 /* VenuesLaunchRouter.swift in Sources */,
 				6E7237B02014877A00068497 /* SearchVenuesInteractor.swift in Sources */,
 				6E75406A20134EC700F81751 /* NetworkClientConstants.swift in Sources */,
 				6E588DBB20138A6D006F27E2 /* SearchVenueResponce.swift in Sources */,
