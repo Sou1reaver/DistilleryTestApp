@@ -12,18 +12,11 @@ import Foundation
 struct ApplicationConfigurator {
     
     private let venuesLaunchRouter: VenuesLaunchRouterInput = VenuesLaunchRouter()
-    private func checkPermissions() {
-        DispatchQueue.main.async {
-            LocationService().requestAuthorization()
-        }
-    }
-    
-    func openInitialModule() {
+    private func openInitialModule() {
         venuesLaunchRouter.openSearchVenuesModule()
     }
     
     func configureInitialSettings() {
-        checkPermissions()
         openInitialModule()
     }
 }

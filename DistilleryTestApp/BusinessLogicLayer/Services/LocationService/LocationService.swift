@@ -13,6 +13,7 @@ import CoreLocation
 class LocationService: NSObject {
     private lazy var manager = createManager()
     var output: LocationServiceOutput?
+    var lastCoordinate: LocationCoordinate?
     
     private func createManager() -> CLLocationManager {
         let manager  = CLLocationManager()
@@ -45,6 +46,7 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last, currentLocation.horizontalAccuracy >= 0 {
             let coordinate = LocationCoordinate(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
+            lastCoordinate = coordinate
             output?.locationService(self, didUpdateLocation: coordinate)
         }
     }

@@ -46,6 +46,7 @@ extension VenueService: VenueServiceInput {
                                     do {
                                         let searchVenueResponce = try JSONDecoder().decode(SearchVenueResponce.self, from: data)
                                         completionHandler?(searchVenueResponce.venues)
+                                        print(searchVenueResponce.venues)
                                     } catch let error {
                                         print(error.localizedDescription)
                                     }

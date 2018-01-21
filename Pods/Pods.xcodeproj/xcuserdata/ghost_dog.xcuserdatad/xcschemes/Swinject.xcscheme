@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "62B3349D9F770B22A8D22F5920BF0D6F"
-               BuildableName = "Pods_DistilleryTestApp.framework"
-               BlueprintName = "Pods-DistilleryTestApp"
+               BlueprintIdentifier = "01086631E77C1EAC2FE4FF7B056E827A"
+               BuildableName = "Swinject.framework"
+               BlueprintName = "Swinject"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "62B3349D9F770B22A8D22F5920BF0D6F"
-            BuildableName = "Pods_DistilleryTestApp.framework"
-            BlueprintName = "Pods-DistilleryTestApp"
+            BlueprintIdentifier = "01086631E77C1EAC2FE4FF7B056E827A"
+            BuildableName = "Swinject.framework"
+            BlueprintName = "Swinject"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -11,6 +11,7 @@ import Foundation
 
 protocol LocationServiceInput {
     var output: LocationServiceOutput? {get set}
+    var lastCoordinate: LocationCoordinate? { get }
     func requestAuthorization()
     func start()
     func stop() 

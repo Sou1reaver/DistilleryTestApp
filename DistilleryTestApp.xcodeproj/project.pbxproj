@@ -29,6 +29,8 @@
 		6E7237D120149FA100068497 /* StoryboardNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237D020149FA100068497 /* StoryboardNames.swift */; };
 		6E7237D32014A25A00068497 /* VenuesLaunchRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237D22014A25A00068497 /* VenuesLaunchRouterInput.swift */; };
 		6E7237D82014A7E100068497 /* SearchVenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237D72014A7E100068497 /* SearchVenueTableViewCell.swift */; };
+		6E7237DB2014B00C00068497 /* SearchVenueCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7237DA2014B00C00068497 /* SearchVenueCellBuilder.swift */; };
+		6E7237DF2014B54800068497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7237DE2014B54800068497 /* Main.storyboard */; };
 		6E7540542013398E00F81751 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540532013398E00F81751 /* NetworkClient.swift */; };
 		6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405520133F0100F81751 /* NetworkClientInput.swift */; };
 		6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */; };
@@ -87,6 +89,8 @@
 		6E7237D020149FA100068497 /* StoryboardNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardNames.swift; sourceTree = "<group>"; };
 		6E7237D22014A25A00068497 /* VenuesLaunchRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesLaunchRouterInput.swift; sourceTree = "<group>"; };
 		6E7237D72014A7E100068497 /* SearchVenueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenueTableViewCell.swift; sourceTree = "<group>"; };
+		6E7237DA2014B00C00068497 /* SearchVenueCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenueCellBuilder.swift; sourceTree = "<group>"; };
+		6E7237DE2014B54800068497 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6E7540532013398E00F81751 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		6E75405520133F0100F81751 /* NetworkClientInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientInput.swift; sourceTree = "<group>"; };
 		6E75405B201346FB00F81751 /* VenueServiceUrlConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceUrlConstants.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		6E7237AB201486FA00068497 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6E7237D92014AFBF00068497 /* CellBuilder */,
 				6E7237D62014A7C000068497 /* Cell */,
 				6E7237B7201490BD00068497 /* SearchVenuesViewController.swift */,
 				6E7237C12014976900068497 /* SearchVenuesViewInput.swift */,
@@ -296,6 +301,14 @@
 				6E7237D72014A7E100068497 /* SearchVenueTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		6E7237D92014AFBF00068497 /* CellBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				6E7237DA2014B00C00068497 /* SearchVenueCellBuilder.swift */,
+			);
+			path = CellBuilder;
 			sourceTree = "<group>";
 		};
 		6E7540522013368900F81751 /* NetworkCore */ = {
@@ -483,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				6E7237A32014856C00068497 /* UserStories */,
+				6E7237DE2014B54800068497 /* Main.storyboard */,
 				6ED242E320132B7A0028F982 /* LaunchScreen.storyboard */,
 			);
 			path = PresentationLayer;
@@ -659,6 +673,7 @@
 				6ED242E520132B7A0028F982 /* LaunchScreen.storyboard in Resources */,
 				6ED242E220132B7A0028F982 /* Assets.xcassets in Resources */,
 				6E7237A92014866300068497 /* Venues.storyboard in Resources */,
+				6E7237DF2014B54800068497 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,6 +844,7 @@
 				6E7237C92014997300068497 /* VenuesLaunchRouter.swift in Sources */,
 				6E7237B02014877A00068497 /* SearchVenuesInteractor.swift in Sources */,
 				6E75406A20134EC700F81751 /* NetworkClientConstants.swift in Sources */,
+				6E7237DB2014B00C00068497 /* SearchVenueCellBuilder.swift in Sources */,
 				6E588DBB20138A6D006F27E2 /* SearchVenueResponce.swift in Sources */,
 				6E7237C22014976900068497 /* SearchVenuesViewInput.swift in Sources */,
 				6E7237B8201490BD00068497 /* SearchVenuesViewController.swift in Sources */,

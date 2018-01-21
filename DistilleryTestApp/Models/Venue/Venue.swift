@@ -13,4 +13,11 @@ struct Venue: Decodable {
     var name: String
     var location: VenueLocation
     var categories: [VenueCategory]
+    
+    var primaryCategory: VenueCategory? {
+        return categories.filter({ (category) -> Bool in
+            let isPrimary = category.isPrimary ?? false
+            return isPrimary
+        }).first
+    }
 }

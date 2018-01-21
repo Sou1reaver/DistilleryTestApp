@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,17 +13,88 @@
         <!--Search Venues View Controller-->
         <scene sceneID="mAB-W6-pZH">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESg-xX-PQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SearchVenuesViewController" id="wkE-ec-XOn" customClass="SearchVenuesViewController" customModule="DistilleryTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yem-A5-cqX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aoN-Ps-kS4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="eGc-KV-7I2">
+                                    <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchVenueTableViewCell" id="HMS-j9-s74" customClass="SearchVenueTableViewCell" customModule="DistilleryTestApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HMS-j9-s74" id="h2Z-RT-2Kg">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="63.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zib-P3-eba">
+                                                    <rect key="frame" x="280.33333333333331" y="21.333333333333336" width="41.666666666666686" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Awq-j8-aUo">
+                                                    <rect key="frame" x="19.999999999999996" y="10.666666666666668" width="41.666666666666657" height="42.333333333333329"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3V-ki-O01">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj6-z8-qov">
+                                                            <rect key="frame" x="0.0" y="25.333333333333336" width="41.666666666666664" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zib-P3-eba" secondAttribute="trailing" constant="20" id="DkX-9d-zyz"/>
+                                                <constraint firstItem="zib-P3-eba" firstAttribute="centerY" secondItem="h2Z-RT-2Kg" secondAttribute="centerY" id="ExO-O0-2Pw"/>
+                                                <constraint firstItem="Awq-j8-aUo" firstAttribute="leading" secondItem="h2Z-RT-2Kg" secondAttribute="leading" constant="20" id="KHo-9l-CsK"/>
+                                                <constraint firstItem="Awq-j8-aUo" firstAttribute="centerY" secondItem="h2Z-RT-2Kg" secondAttribute="centerY" id="ZTE-0Z-ROd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryTitleLabel" destination="fj6-z8-qov" id="Gj1-Bk-SBe"/>
+                                            <outlet property="distanceLabel" destination="zib-P3-eba" id="6o6-ar-X1p"/>
+                                            <outlet property="titleLabel" destination="U3V-ki-O01" id="7b3-Zx-yOl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wkE-ec-XOn" id="l4i-ug-Nyz"/>
+                                    <outlet property="delegate" destination="wkE-ec-XOn" id="taY-Fk-WZq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aoN-Ps-kS4" firstAttribute="top" secondItem="Yem-A5-cqX" secondAttribute="top" id="BM1-iw-3AP"/>
+                            <constraint firstItem="ggQ-1Y-cAO" firstAttribute="trailing" secondItem="aoN-Ps-kS4" secondAttribute="trailing" id="K2r-Ga-7Nh"/>
+                            <constraint firstItem="aoN-Ps-kS4" firstAttribute="leading" secondItem="ggQ-1Y-cAO" secondAttribute="leading" id="Sql-nn-ouQ"/>
+                            <constraint firstAttribute="bottom" secondItem="aoN-Ps-kS4" secondAttribute="bottom" id="dw9-2N-7HA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ggQ-1Y-cAO"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Cof-oi-zLO"/>
+                    <connections>
+                        <outlet property="tableView" destination="aoN-Ps-kS4" id="fP7-UK-0nw"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ESg-xX-PQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-521" y="139"/>
+            <point key="canvasLocation" x="-2134" y="69"/>
         </scene>
     </scenes>
 </document>

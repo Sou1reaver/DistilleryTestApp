@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swinject
 
 
 struct VenuesLaunchRouter {
@@ -16,6 +17,11 @@ struct VenuesLaunchRouter {
     
     private var searchVenuesViewController: ViewController? {
         return venuesStoryboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
+    }
+    
+    private var rootNavigationViewControler: UINavigationController? {
+        let window = (UIApplication.shared.delegate as? AppDelegate)?.window
+        return window?.rootViewController as? UINavigationController
     }
 }
 
@@ -30,12 +36,24 @@ extension VenuesLaunchRouter: ModuleConfigurator {
             return nil
         }
         
-        var presenter = SearchVenuesPresenter()
-        var interactor = SearchVenuesInteractor()
         
-        presenter.interactor = interactor
-        interactor.output = presenter
-        searchVenuesVC.output = presenter
+        let container = Container()
+        container.register(SearchVenuesInteractor.self) { (r, presenter: SearchVenuesPresenter) in
+            var interactor = SearchVenuesInteractor()
+            interactor.output = presenter
+            return interactor
+        }
+        
+        
+        container.register(SearchVenuesPresenter.self) { (r, view: SearchVenuesViewController) in
+            var presenter = SearchVenuesPresenter()
+            presenter.view = view
+            presenter.interactor = container.resolve(SearchVenuesInteractor.self, argument: presenter)
+            return presenter
+        }
+        
+        
+        searchVenuesVC.output = container.resolve(SearchVenuesPresenter.self, argument: searchVenuesVC)
         
         return searchVenuesVC
     }
@@ -45,8 +63,13 @@ extension VenuesLaunchRouter: ModuleConfigurator {
 
 extension VenuesLaunchRouter: VenuesLaunchRouterInput {
     func openSearchVenuesModule() {
-        let window = (UIApplication.shared.delegate as? AppDelegate)?.window
-        window?.rootViewController = assembleModule(withData: nil)
-        window?.makeKeyAndVisible()
+        guard let module = assembleModule(withData: nil) else {
+            print("Assemble search venues module error")
+            return
+        }
+        DispatchQueue.main.async {
+            self.rootNavigationViewControler?.setViewControllers([module], animated: false)
+        }
+        
     }
 }
