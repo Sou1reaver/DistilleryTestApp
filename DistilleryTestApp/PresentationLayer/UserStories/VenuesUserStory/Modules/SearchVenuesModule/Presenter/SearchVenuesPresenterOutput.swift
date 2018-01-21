@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol SearchVenuesPresenterOutput {
+protocol SearchVenuesPresenterOutput: class {
     func setupView()
 }

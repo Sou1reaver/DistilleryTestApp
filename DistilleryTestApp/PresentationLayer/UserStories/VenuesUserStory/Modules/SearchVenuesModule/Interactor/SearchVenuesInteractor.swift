@@ -9,20 +9,20 @@
 import Foundation
 
 
-struct SearchVenuesInteractor {
+class SearchVenuesInteractor {
     private var radius: Int {
         return 1000
     }
     
-    private var locationService: LocationServiceInput
-    private let venueService: VenueServiceInput
-    var output: SearchVenuesInteractorOutput? 
+    private lazy var locationService = createLocationService()
+    private lazy var venueService: VenueServiceInput = VenueService()
+    weak var output: SearchVenuesInteractorOutput?
     
-    init() {
-        venueService = VenueService()
-        locationService = LocationService()
-        locationService.output = self
+    private func createLocationService() -> LocationServiceInput {
+        let locationService = LocationService()
         locationService.requestAuthorization()
+        locationService.output = self
+        return locationService
     }
     
     private func getVenuesFor(coordinate: LocationCoordinate) {

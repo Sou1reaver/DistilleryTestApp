@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol SearchVenuesInteractorInput {
+protocol SearchVenuesInteractorInput: class {
     func updateVenues()
 }

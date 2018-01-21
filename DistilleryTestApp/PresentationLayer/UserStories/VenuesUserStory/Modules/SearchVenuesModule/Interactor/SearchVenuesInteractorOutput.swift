@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol SearchVenuesInteractorOutput {
+protocol SearchVenuesInteractorOutput: class {
     func didUpdateVenueList(venues: [Venue])
 }

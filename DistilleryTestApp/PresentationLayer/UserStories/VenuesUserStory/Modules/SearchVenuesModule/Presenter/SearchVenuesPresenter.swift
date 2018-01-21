@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct SearchVenuesPresenter {
+class SearchVenuesPresenter {
     var interactor: SearchVenuesInteractorInput?
     weak var view: SearchVenuesViewInput?
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swinject
 
 
 struct VenuesLaunchRouter {
@@ -36,23 +35,13 @@ extension VenuesLaunchRouter: ModuleConfigurator {
             return nil
         }
         
+        let presenter = SearchVenuesPresenter()
+        let interactor = SearchVenuesInteractor()
         
-        let container = Container()
-        container.register(SearchVenuesInteractor.self) { (r, presenter: SearchVenuesPresenter) in
-            var interactor = SearchVenuesInteractor()
-            interactor.output = presenter
-            return interactor
-        }
-        
-        
-        container.register(SearchVenuesPresenter.self) { (r, view: SearchVenuesViewController) in
-            var presenter = SearchVenuesPresenter()
-            presenter.view = view
-            presenter.interactor = container.resolve(SearchVenuesInteractor.self, argument: presenter)
-            return presenter
-        }
-        
-        searchVenuesVC.output = container.resolve(SearchVenuesPresenter.self, argument: searchVenuesVC)
+        interactor.output = presenter
+        presenter.view = searchVenuesVC
+        presenter.interactor = interactor
+        searchVenuesVC.output = presenter
         
         return searchVenuesVC
     }
