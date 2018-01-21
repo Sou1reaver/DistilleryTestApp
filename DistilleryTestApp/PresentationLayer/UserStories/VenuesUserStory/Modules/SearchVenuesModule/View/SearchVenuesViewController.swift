@@ -9,6 +9,8 @@
 import UIKit
 
 class SearchVenuesViewController: UIViewController {
+    
+    var output: SearchVenuesPresenterOutput?
 
     override func viewDidLoad() {
         super.viewDidLoad()

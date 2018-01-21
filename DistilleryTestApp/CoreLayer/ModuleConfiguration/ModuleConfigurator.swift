@@ -10,10 +10,9 @@ import UIKit
 
 
 protocol ModuleConfigurator {
-    associatedtype ViewController: UIViewController
+    associatedtype ViewController
     associatedtype DestinationModuleData
-    weak var viewController: ViewController? {  get }
-    func assembleModule(withData data: DestinationModuleData?) -> UIViewController?
+    func assembleModule(withData data: DestinationModuleData?) -> ViewController?
 }
 
 
