@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol LocationServiceInput {
-    weak var output: LocationServiceOutput? {get set}
+    var output: LocationServiceOutput? {get set}
     func requestAuthorization()
     func start()
     func stop() 
