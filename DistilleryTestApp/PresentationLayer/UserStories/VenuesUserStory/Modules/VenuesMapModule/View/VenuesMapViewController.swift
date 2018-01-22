@@ -26,7 +26,7 @@ class VenuesMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        output?.setupView()
     }
     
     
@@ -34,6 +34,17 @@ class VenuesMapViewController: UIViewController {
     @IBAction func closeButtonDidTap(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    // MAR: - private methods
+    private func centerMapOnCoordinate(_ coordinate: CLLocationCoordinate2D, withAnimation: Bool) {
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        var deltaPoint = mapView.convert(location.coordinate, toPointTo: mapView)
+        deltaPoint.y += mapView.bounds.height*0.35
+        let newCoor = mapView.convert(deltaPoint, toCoordinateFrom: mapView)
+        mapView.setCenter(newCoor, animated: withAnimation)
+    }
+    
 }
 
 
@@ -44,7 +55,15 @@ extension VenuesMapViewController: VenuesMapViewInput {
         mapView.reloadInputViews()
     }
     
-    
+    func setRegionOnCoordinate(_ locationCoordinate: LocationCoordinate) {
+        let regionRadius = 1000.0
+        let coordinate = CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate,
+                                                                  regionRadius * 2.0,
+                                                                  regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: false)
+        centerMapOnCoordinate(coordinate, withAnimation: true)
+    }
 }
 
 

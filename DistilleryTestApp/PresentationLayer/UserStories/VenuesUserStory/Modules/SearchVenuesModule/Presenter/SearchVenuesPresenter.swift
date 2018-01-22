@@ -16,11 +16,21 @@ class SearchVenuesPresenter {
 }
 
 
+// MARK: - SearchVenuesPresenterOutput
 extension SearchVenuesPresenter: SearchVenuesPresenterOutput {
     func setupView() {
         interactor?.updateVenues()
     }
+    
+    func didTapVenueCell(with venue: Venue) {
+        router?.openVenueDetailModule(from: view, with: venue)
+    }
+    
+    func didTapMapButton(with venues: [Venue]) {
+        router?.openVenuesMapModule(from: view, with: venues)
+    }
 }
+
 
 // MARK: - SearchVenuesInteractorOutput
 extension SearchVenuesPresenter: SearchVenuesInteractorOutput {
@@ -40,12 +50,7 @@ extension SearchVenuesPresenter: SearchVenuesInteractorOutput {
     func locationServiceDidFailAuthorized() {
         view?.showlocationServiceAuthorizedErrorAlert()
     }
-    
-    func didTapVenueCell(with venue: Venue) {
-        router?.openVenueDetailModule(from: view, with: venue)
-    }
-    
-    func didTapMapButton(with venues: [Venue]) {
-        router?.openVenuesMapModule(from: view, with: venues)
-    }
 }
+
+
+
