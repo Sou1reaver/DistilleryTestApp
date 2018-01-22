@@ -10,5 +10,5 @@ import Foundation
 
 
 protocol VenueDetailViewInput: class {
-    func updateStateWithVenue(_ venue: Venue)
+    func updateStateWith(venueDeails: [String], imageUrl: String?)
 }

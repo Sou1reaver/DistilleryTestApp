@@ -12,6 +12,21 @@ import Foundation
 class VenueDetailPresenter {
     private var venue: Venue?
     weak var view: VenueDetailViewInput?
+    
+    private func getVenueDetails(_ venue: Venue) -> [String] {
+        var details = [venue.name]
+        if let categoryName = venue.primaryCategory?.name {
+            details.append(categoryName)
+        }
+        if let city = venue.location.city {
+           details.append(city)
+        }
+        if let address = venue.location.address {
+            details.append(address)
+        }
+        
+        return details
+    }
 }
 
 
@@ -19,7 +34,8 @@ class VenueDetailPresenter {
 extension VenueDetailPresenter: VenueDetailPresenterOutput {
     func setupView() {
         guard let `venue` = venue else { return }
-        view?.updateStateWithVenue(venue)
+        let venueDeails = getVenueDetails(venue)
+        view?.updateStateWith(venueDeails: venueDeails, imageUrl: venue.primaryCategory?.iconUrl)
     }
 }
 

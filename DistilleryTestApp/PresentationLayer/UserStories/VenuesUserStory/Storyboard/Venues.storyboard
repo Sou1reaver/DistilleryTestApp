@@ -100,5 +100,75 @@
             </objects>
             <point key="canvasLocation" x="-2134" y="69"/>
         </scene>
+        <!--Venue Detail View Controller-->
+        <scene sceneID="Bpo-Cl-M8U">
+            <objects>
+                <viewController storyboardIdentifier="VenueDetailViewController" id="bZ9-S5-THZ" customClass="VenueDetailViewController" customModule="DistilleryTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZeC-AW-Ta6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gHW-7i-SKk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kkJ-4e-3gP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="wQC-2E-ZjP">
+                                    <rect key="frame" x="0.0" y="325" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VenueDetailTableViewCell" id="X2D-M2-ceE" customClass="VenueDetailTableViewCell" customModule="DistilleryTestApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="261" width="375" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X2D-M2-ceE" id="cZp-ES-83G">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pl7-zy-COa">
+                                                    <rect key="frame" x="20" y="0.0" width="335" height="63.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pl7-zy-COa" firstAttribute="leading" secondItem="cZp-ES-83G" secondAttribute="leading" constant="20" id="0yi-ix-8jh"/>
+                                                <constraint firstAttribute="bottom" secondItem="pl7-zy-COa" secondAttribute="bottom" id="VP9-oj-fir"/>
+                                                <constraint firstAttribute="trailing" secondItem="pl7-zy-COa" secondAttribute="trailing" constant="20" id="hMg-eD-NpQ"/>
+                                                <constraint firstItem="pl7-zy-COa" firstAttribute="top" secondItem="cZp-ES-83G" secondAttribute="top" id="mje-nz-MlL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="pl7-zy-COa" id="OgI-z7-jpT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bZ9-S5-THZ" id="5Ob-ri-w9j"/>
+                                    <outlet property="delegate" destination="bZ9-S5-THZ" id="95S-SC-hXS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xiX-Xf-MYz" firstAttribute="trailing" secondItem="gHW-7i-SKk" secondAttribute="trailing" id="Ve1-GL-DTs"/>
+                            <constraint firstAttribute="bottom" secondItem="gHW-7i-SKk" secondAttribute="bottom" id="YFo-Nq-mAt"/>
+                            <constraint firstItem="gHW-7i-SKk" firstAttribute="leading" secondItem="xiX-Xf-MYz" secondAttribute="leading" id="any-uo-zDN"/>
+                            <constraint firstItem="gHW-7i-SKk" firstAttribute="top" secondItem="ZeC-AW-Ta6" secondAttribute="top" id="cWM-nT-4ve"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xiX-Xf-MYz"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="gHW-7i-SKk" id="noM-rN-d41"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6A7-H5-A7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1248.8" y="78.325123152709367"/>
+        </scene>
     </scenes>
 </document>

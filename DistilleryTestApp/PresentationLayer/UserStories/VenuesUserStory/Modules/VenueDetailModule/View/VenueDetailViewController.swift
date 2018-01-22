@@ -10,8 +10,9 @@ import UIKit
 
 class VenueDetailViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     var output: VenueDetailPresenterOutput?
-    var venue: Venue!
+    var venueDeails = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,23 @@ class VenueDetailViewController: UIViewController {
 
 // MARK: - SearchVenuesViewInput
 extension VenueDetailViewController: VenueDetailViewInput {
-    func updateStateWithVenue(_ venue: Venue) {
-        self.venue = venue
+    func updateStateWith(venueDeails: [String], imageUrl: String?) {
+        self.venueDeails = venueDeails
+    }
+}
+
+
+// MARK: - UITableViewDataSource
+extension VenueDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return venueDeails.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let id = String.init(describing: VenueDetailTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! VenueDetailTableViewCell
+        VenueDetailCellBuilder().configureCell(cell, with: venueDeails[indexPath.row])
+        return cell
     }
 }
