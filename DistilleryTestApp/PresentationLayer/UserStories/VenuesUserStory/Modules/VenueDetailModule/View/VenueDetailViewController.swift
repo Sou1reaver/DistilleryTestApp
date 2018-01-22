@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class VenueDetailViewController: UIViewController {
     
@@ -28,6 +29,12 @@ class VenueDetailViewController: UIViewController {
 extension VenueDetailViewController: VenueDetailViewInput {
     func updateStateWith(venueDeails: [String], imageUrl: String?) {
         self.venueDeails = venueDeails
+        if let imageUrl = URL(string: ((imageUrl ?? ""))) {
+            let imageView = UIImageView()
+            imageView.af_setImage(withURL: imageUrl)
+            tableView.tableHeaderView = UIImageView()
+        }
+        tableView.reloadData()
     }
 }
 

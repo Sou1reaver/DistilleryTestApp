@@ -6,6 +6,7 @@ target 'DistilleryTestApp' do
 
   # Pods for DistilleryTestApp
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
   target 'DistilleryTestAppTests' do
     inherit! :search_paths
