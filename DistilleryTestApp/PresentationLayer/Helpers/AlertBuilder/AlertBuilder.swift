@@ -12,7 +12,6 @@ struct AlertBuilder {
     func createInfoAlert(title: String) -> UIAlertController {
         let title = title
         let alertVC = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        alertVC.view.tintColor = UIColor.red
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertVC.addAction(okAction)

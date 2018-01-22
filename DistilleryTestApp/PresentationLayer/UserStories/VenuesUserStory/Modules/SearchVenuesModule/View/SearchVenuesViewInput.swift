@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol SearchVenuesViewInput: class {
+protocol SearchVenuesViewInput: ActivityIndicatorViewProtocol {
     func updateStateWithVenues(_ venues: [Venue])
     func showlocationServiceAuthorizedErrorAlert()
 }

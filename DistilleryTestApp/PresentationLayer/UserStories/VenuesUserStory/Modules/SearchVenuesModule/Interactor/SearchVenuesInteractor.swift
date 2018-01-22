@@ -25,11 +25,16 @@ class SearchVenuesInteractor {
     }
     
     private func getVenuesFor(coordinate: LocationCoordinate) {
+        output?.didStartUpdateVenue()
         venueService.getVenuesFor(coordinate: coordinate,
                                   inRadius: radius,
-                                  completionHandler: { (venues) in
-                                    self.output?.didUpdateVenueList(venues: venues)
+                                  success: {[weak self] (venues) in
+                                    self?.output?.didUpdateVenueList(venues: venues)
+        },
+                                  failure: { (error) in
+                                    self.output?.venuesRequestDidFail(error)
         })
+        
     }
     
 }

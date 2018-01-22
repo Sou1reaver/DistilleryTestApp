@@ -52,13 +52,13 @@ extension NetworkClient: NetworkClientInput {
         if let inputParams = parameters {
             params.merge(inputParams, uniquingKeysWith: {$1})
         }
-        
+
         Alamofire.request(url,
                           method: method,
                           parameters: params,
                           encoding: enconding,
                           headers: headers)
-
+           
             .responseJSON(queue: responceQueue,
                           options: JSONSerialization.ReadingOptions.allowFragments,
                           completionHandler: { (responce) in

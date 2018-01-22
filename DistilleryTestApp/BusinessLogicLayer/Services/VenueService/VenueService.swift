@@ -34,9 +34,12 @@ struct VenueService {
 
 extension VenueService: VenueServiceInput {
     
-    func getVenuesFor(coordinate: LocationCoordinate, inRadius radius: Int, completionHandler: ((_ venues: [Venue]) -> Void)?) {
-        let parameters = generateParameters(radius: radius, coordinate: coordinate)
+    func getVenuesFor(coordinate: LocationCoordinate,
+                      inRadius radius: Int,
+                      success: ((_ venues: [Venue]) -> Void)?,
+                      failure: ((_ error: Error?) -> Void)?) {
         
+        let parameters = generateParameters(radius: radius, coordinate: coordinate)
         networkClient.sendRequest(url: venuesSearchUrl,
                                   method: .get,
                                   parameters: parameters,
@@ -45,11 +48,14 @@ extension VenueService: VenueServiceInput {
                                   success: { (data) in
                                     do {
                                         let searchVenueResponce = try JSONDecoder().decode(SearchVenueResponce.self, from: data)
-                                        completionHandler?(searchVenueResponce.venues)
+                                        success?(searchVenueResponce.venues)
                                     } catch let error {
                                         print(error.localizedDescription)
+                                        failure?(error)
                                     }
         },
-                                  failure: nil)
+                                  failure: { (error) in
+                                    failure?(error)
+        })
     }
 }

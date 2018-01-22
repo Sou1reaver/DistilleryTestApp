@@ -10,6 +10,8 @@ import Foundation
 
 
 protocol SearchVenuesInteractorOutput: class {
+    func didStartUpdateVenue()
     func didUpdateVenueList(venues: [Venue])
     func locationServiceDidFailAuthorized()
+    func venuesRequestDidFail( _ error: Error?)
 }

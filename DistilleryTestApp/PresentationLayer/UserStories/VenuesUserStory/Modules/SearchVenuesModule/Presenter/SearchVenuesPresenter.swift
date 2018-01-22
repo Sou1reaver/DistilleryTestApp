@@ -23,12 +23,20 @@ extension SearchVenuesPresenter: SearchVenuesPresenterOutput {
 
 // MARK: - SearchVenuesInteractorOutput
 extension SearchVenuesPresenter: SearchVenuesInteractorOutput {
+    func didStartUpdateVenue() {
+        view?.showActivityIndicator()
+    }
+    
     func didUpdateVenueList(venues: [Venue]) {
+        view?.removeActivityIndicator()
         view?.updateStateWithVenues(venues)
+    }
+    
+    func venuesRequestDidFail(_ error: Error?) {
+        view?.removeActivityIndicator()
     }
     
     func locationServiceDidFailAuthorized() {
         view?.showlocationServiceAuthorizedErrorAlert()
     }
-    
 }

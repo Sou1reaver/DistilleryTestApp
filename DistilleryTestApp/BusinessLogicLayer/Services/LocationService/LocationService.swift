@@ -37,7 +37,7 @@ extension LocationService: LocationServiceInput {
             }
         } else {
             print("Location services are not enabled")
-            output?.locationServiceDidFailAuthorized()
+            manager.requestWhenInUseAuthorization()
         }
     }
     
@@ -61,7 +61,9 @@ extension LocationService: CLLocationManagerDelegate {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             manager.startUpdatingLocation()
-        default:
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .denied, .restricted:
             output?.locationServiceDidFailAuthorized()
         }
     }

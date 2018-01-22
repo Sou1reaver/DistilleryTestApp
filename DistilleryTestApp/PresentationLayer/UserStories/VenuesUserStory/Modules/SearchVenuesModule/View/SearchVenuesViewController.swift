@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchVenuesViewController: UIViewController {
+class SearchVenuesViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var output: SearchVenuesPresenterOutput?
