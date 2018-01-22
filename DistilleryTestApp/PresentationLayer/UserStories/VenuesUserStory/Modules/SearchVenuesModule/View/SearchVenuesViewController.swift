@@ -30,9 +30,6 @@ class SearchVenuesViewController: BaseViewController {
     @IBAction func mapButtonDidTap(_ sender: UIBarButtonItem) {
         output?.didTapMapButton(with: venues)
     }
-    
-    // MARK: - Private methods
-    
 }
 
 
