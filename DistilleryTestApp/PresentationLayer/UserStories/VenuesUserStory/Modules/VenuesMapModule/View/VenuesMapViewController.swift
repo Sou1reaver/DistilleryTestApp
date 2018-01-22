@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import MapKit
 
 class VenuesMapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+}
 
 
+
+extension VenuesMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        return nil
+    }
 }
