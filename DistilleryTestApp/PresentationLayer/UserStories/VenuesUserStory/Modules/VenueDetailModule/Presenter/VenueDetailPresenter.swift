@@ -30,7 +30,7 @@ class VenueDetailPresenter {
 }
 
 
-
+// MARK: - VenueDetailPresenterOutput
 extension VenueDetailPresenter: VenueDetailPresenterOutput {
     func setupView() {
         guard let `venue` = venue else { return }

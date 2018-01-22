@@ -10,8 +10,17 @@ import UIKit
 import MapKit
 
 class VenuesMapViewController: UIViewController {
-
+    
+    // MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
+    
+    // MARK: - Properties
+    var output: VenuesMapPresenterOutput?
+    var venueAnnotations = [VenueAnnotation]()
+    private var annotationId: String {
+        return String(describing: VenueAnnotation.self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,9 +29,26 @@ class VenuesMapViewController: UIViewController {
 }
 
 
+// MARK: - VenuesMapViewInput
+extension VenuesMapViewController: VenuesMapViewInput {
+    func updateStateWith(_ venueAnnotations: [VenueAnnotation]) {
+        mapView.addAnnotations(venueAnnotations)
+        mapView.reloadInputViews()
+    }
+    
+    
+}
 
+
+// MARK: - MKMapViewDelegate
 extension VenuesMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        return nil
+        var view : MKPinAnnotationView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) as? MKPinAnnotationView {
+            view = dequeuedView
+        } else { 
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
+        }
+        return view
     }
 }

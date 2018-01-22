@@ -10,5 +10,5 @@ import Foundation
 
 
 protocol VenuesMapViewInput: class {
-    func updateStateWith()
+    func updateStateWith(_ venueAnnotations: [VenueAnnotation])
 }
