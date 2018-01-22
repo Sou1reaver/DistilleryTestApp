@@ -25,7 +25,8 @@ class VenuesMapViewController: UIViewController {
     // MARK: - Life Circle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configureMapView()
         output?.setupView()
     }
     
@@ -35,16 +36,10 @@ class VenuesMapViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
-    // MAR: - private methods
-    private func centerMapOnCoordinate(_ coordinate: CLLocationCoordinate2D, withAnimation: Bool) {
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        var deltaPoint = mapView.convert(location.coordinate, toPointTo: mapView)
-        deltaPoint.y += mapView.bounds.height*0.35
-        let newCoor = mapView.convert(deltaPoint, toCoordinateFrom: mapView)
-        mapView.setCenter(newCoor, animated: withAnimation)
+    // MARK: - private methods
+    func configureMapView() {
+        mapView.userTrackingMode = .follow
     }
-    
 }
 
 
@@ -52,17 +47,9 @@ class VenuesMapViewController: UIViewController {
 extension VenuesMapViewController: VenuesMapViewInput {
     func updateStateWith(_ venueAnnotations: [VenueAnnotation]) {
         mapView.addAnnotations(venueAnnotations)
-        mapView.reloadInputViews()
-    }
-    
-    func setRegionOnCoordinate(_ locationCoordinate: LocationCoordinate) {
-        let regionRadius = 1000.0
-        let coordinate = CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate,
-                                                                  regionRadius * 2.0,
-                                                                  regionRadius * 2.0)
-        mapView.setRegion(coordinateRegion, animated: false)
-        centerMapOnCoordinate(coordinate, withAnimation: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.mapView.reloadInputViews()
+        }
     }
 }
 
@@ -73,6 +60,7 @@ extension VenuesMapViewController: MKMapViewDelegate {
         var view : MKPinAnnotationView
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) as? MKPinAnnotationView {
             view = dequeuedView
+            view.annotation = annotation
         } else { 
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
         }

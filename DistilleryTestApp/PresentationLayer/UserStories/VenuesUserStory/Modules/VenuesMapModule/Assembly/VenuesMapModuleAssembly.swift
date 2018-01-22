@@ -30,14 +30,9 @@ extension VenuesMapModuleAssembly: ModuleAssembly {
         }
         
         let presenter = VenuesMapPresenter()
-        let interactor = VenuesMapInteractor()
-        
         if let venues = data {
             presenter.configureCurrentModule(with: venues)
         }
-        
-        interactor.output = presenter
-        presenter.interactor = interactor
         presenter.view = venuesMapVC
         venuesMapVC.output = presenter
         

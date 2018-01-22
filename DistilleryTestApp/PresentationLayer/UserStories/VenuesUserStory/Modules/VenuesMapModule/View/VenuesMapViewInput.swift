@@ -11,5 +11,4 @@ import Foundation
 
 protocol VenuesMapViewInput: class {
     func updateStateWith(_ venueAnnotations: [VenueAnnotation])
-    func setRegionOnCoordinate(_ locationCoordinate: LocationCoordinate)
 }

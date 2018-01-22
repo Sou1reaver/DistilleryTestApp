@@ -116,7 +116,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QcL-4h-OKR">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcL-4h-OKR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <connections>
                                     <outlet property="delegate" destination="Afx-WV-tS9" id="0sL-Tq-WD4"/>
