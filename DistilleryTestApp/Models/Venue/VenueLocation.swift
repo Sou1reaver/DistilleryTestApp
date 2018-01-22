@@ -9,6 +9,8 @@
 import Foundation
 
 struct VenueLocation: Decodable {
+    var lat: Double
+    var lng: Double
     var country: String?
     var state: String?
     var city: String?
