@@ -11,4 +11,5 @@ import UIKit
 
 protocol SearchVenuesRouterInput {
     func openVenueDetailModule(from view: SearchVenuesViewInput?, with venue: Venue)
+    func openVenuesMapModule(from view: SearchVenuesViewInput?, with venues: [Venue])
 }

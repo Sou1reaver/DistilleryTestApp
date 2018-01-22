@@ -91,7 +91,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ggQ-1Y-cAO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cof-oi-zLO"/>
+                    <navigationItem key="navigationItem" id="Cof-oi-zLO">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="WlA-SS-3tW">
+                            <connections>
+                                <action selector="mapButtonDidTap:" destination="wkE-ec-XOn" id="yGj-4M-yGN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="aoN-Ps-kS4" id="fP7-UK-0nw"/>
                     </connections>
@@ -130,6 +137,9 @@
                                         <state key="normal" title="Close">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="closeButtonDidTap:" destination="88w-Y3-Lh3" eventType="touchUpInside" id="Y4U-8z-D07"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

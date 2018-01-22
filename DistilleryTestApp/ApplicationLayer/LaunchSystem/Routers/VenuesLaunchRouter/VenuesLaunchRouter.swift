@@ -10,14 +10,6 @@ import UIKit
 
 
 struct VenuesLaunchRouter {
-    private var venuesStoryboard: UIStoryboard {
-        return UIStoryboard(name: StoryboardNames.venues.rawValue, bundle: nil)
-    }
-    
-    private var searchVenuesViewController: DestinationViewController? {
-        return venuesStoryboard.instantiateViewController(withIdentifier: String(describing: DestinationViewController.self)) as? DestinationViewController
-    }
-    
     private var rootNavigationViewControler: UINavigationController? {
         let window = (UIApplication.shared.delegate as? AppDelegate)?.window
         return window?.rootViewController as? UINavigationController
@@ -25,34 +17,10 @@ struct VenuesLaunchRouter {
 }
 
 
-extension VenuesLaunchRouter: ModuleConfigurator {
-    typealias DestinationViewController = SearchVenuesViewController
-    typealias DestinationModuleData = [Venue]
-    
-    internal func assembleModule(withData data: DestinationModuleData?) -> DestinationViewController? {
-        guard let searchVenuesVC = searchVenuesViewController else {
-            print("ViewController with this identifier not found")
-            return nil
-        }
-        
-        let presenter = SearchVenuesPresenter()
-        let interactor = SearchVenuesInteractor()
-        
-        interactor.output = presenter
-        presenter.view = searchVenuesVC
-        presenter.router = SearchVenuesRouter()
-        presenter.interactor = interactor
-        searchVenuesVC.output = presenter
-        
-        return searchVenuesVC
-    }
-}
-
-
-
+// MARK: - VenuesLaunchRouterInput
 extension VenuesLaunchRouter: VenuesLaunchRouterInput {
     func openSearchVenuesModule() {
-        guard let module = assembleModule(withData: nil) else {
+        guard let module = SearchVenuesModuleAssembly().assembleModule(withData: nil) else {
             print("Assemble search venues module error")
             return
         }

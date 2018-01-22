@@ -12,4 +12,5 @@ import Foundation
 protocol SearchVenuesPresenterOutput: class {
     func setupView()
     func didTapVenueCell(with venue: Venue)
+    func didTapMapButton(with venues: [Venue])
 }

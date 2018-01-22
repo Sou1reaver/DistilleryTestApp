@@ -44,4 +44,8 @@ extension SearchVenuesPresenter: SearchVenuesInteractorOutput {
     func didTapVenueCell(with venue: Venue) {
         router?.openVenueDetailModule(from: view, with: venue)
     }
+    
+    func didTapMapButton(with venues: [Venue]) {
+        router?.openVenuesMapModule(from: view, with: venues)
+    }
 }

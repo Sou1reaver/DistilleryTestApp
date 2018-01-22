@@ -1,5 +1,5 @@
 //
-//  ModuleConfigurator.swift
+//  ModuleAssembly.swift
 //  DistilleryTestApp
 //
 //  Created by Vladimir Gordienko on 21.01.18.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol ModuleConfigurator {
+protocol ModuleAssembly {
     associatedtype DestinationViewController
     associatedtype DestinationModuleData
     func assembleModule(withData data: DestinationModuleData?) -> DestinationViewController?

@@ -41,7 +41,7 @@ extension VenueDetailPresenter: VenueDetailPresenterOutput {
 
 // MARK: - VenueDetailModuleInput
 extension VenueDetailPresenter: VenueDetailModuleInput {
-    func configureCurrentModuleWithVenue(_ venue: Venue) {
+    func configureCurrentModule(with venue: Venue) {
         self.venue = venue
     }
 }

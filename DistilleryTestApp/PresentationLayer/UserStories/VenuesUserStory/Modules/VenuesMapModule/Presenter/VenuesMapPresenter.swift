@@ -26,7 +26,7 @@ extension VenuesMapPresenter: VenuesMapPresenterOutput {
 
 // MARK: - VenueDetailModuleInput
 extension VenuesMapPresenter: VenuesMapModuleInput {
-    func configureCurrentModuleWithVenues(_ venues: [Venue]) {
+    func configureCurrentModule(with venues: [Venue]) {
         self.venues = venues
     }
 }

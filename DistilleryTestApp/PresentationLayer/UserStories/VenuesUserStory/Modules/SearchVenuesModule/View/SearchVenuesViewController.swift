@@ -23,6 +23,12 @@ class SearchVenuesViewController: BaseViewController {
 
         output?.setupView()
     }
+    
+    
+    // MARK: - Actions
+    @IBAction func mapButtonDidTap(_ sender: UIBarButtonItem) {
+        output?.didTapMapButton(with: venues)
+    }
 }
 
 

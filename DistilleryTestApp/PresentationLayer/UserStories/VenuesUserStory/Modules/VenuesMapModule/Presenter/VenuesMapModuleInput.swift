@@ -10,5 +10,5 @@ import Foundation
 
 
 protocol VenuesMapModuleInput {
-    func configureCurrentModuleWithVenues(_ venues: [Venue])
+    func configureCurrentModule(with venues: [Venue])
 }
