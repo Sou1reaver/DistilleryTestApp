@@ -12,6 +12,7 @@ class SearchVenuesViewController: BaseViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mapButton: UIBarButtonItem!
     
     // MARK: - Properties
     var output: SearchVenuesPresenterOutput?
@@ -29,6 +30,9 @@ class SearchVenuesViewController: BaseViewController {
     @IBAction func mapButtonDidTap(_ sender: UIBarButtonItem) {
         output?.didTapMapButton(with: venues)
     }
+    
+    // MARK: - Private methods
+    
 }
 
 
@@ -37,6 +41,7 @@ extension SearchVenuesViewController: SearchVenuesViewInput {
     func updateStateWithVenues(_ venues: [Venue]) {
         self.venues = venues
         DispatchQueue.main.async {[weak self] in
+            self?.mapButton.isEnabled = !venues.isEmpty
             self?.tableView.reloadData()
         }
     }
