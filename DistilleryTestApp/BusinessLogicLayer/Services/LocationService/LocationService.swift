@@ -25,8 +25,18 @@ class LocationService: NSObject {
 
 //MARK: - LocationServiceInput
 extension LocationService: LocationServiceInput {
-    func requestAuthorization() {
-        self.manager.requestWhenInUseAuthorization()
+    func isLocationServiceEnabled() -> Bool {
+        if CLLocationManager.locationServicesEnabled() {
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined, .restricted, .denied:
+                return false
+            case .authorizedAlways, .authorizedWhenInUse:
+                return true
+            }
+        } else {
+            print("Location services are not enabled")
+            return false
+        }
     }
     
     func start() {

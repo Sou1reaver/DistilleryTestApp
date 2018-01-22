@@ -48,6 +48,7 @@
 		6ED242E520132B7A0028F982 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED242E320132B7A0028F982 /* LaunchScreen.storyboard */; };
 		6ED242F020132B7A0028F982 /* DistilleryTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED242EF20132B7A0028F982 /* DistilleryTestAppTests.swift */; };
 		6ED242FB20132B7A0028F982 /* DistilleryTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED242FA20132B7A0028F982 /* DistilleryTestAppUITests.swift */; };
+		6EF9C3702015C47D003C1A9E /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C36F2015C47D003C1A9E /* AlertBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		6ED242F620132B7A0028F982 /* DistilleryTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistilleryTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED242FA20132B7A0028F982 /* DistilleryTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistilleryTestAppUITests.swift; sourceTree = "<group>"; };
 		6ED242FC20132B7A0028F982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF9C36F2015C47D003C1A9E /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		7DE3DB99C93EA8B3A9FEC592 /* Pods_DistilleryTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistilleryTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C9DC7B6FA2F0261B48F31F /* Pods-DistilleryTestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistilleryTestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DistilleryTestAppUITests/Pods-DistilleryTestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AB9E69FFED1EFDF5DA655E8E /* Pods-DistilleryTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistilleryTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DistilleryTestAppTests/Pods-DistilleryTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 		6ED2430F20132E230028F982 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				6EF9C36D2015C450003C1A9E /* Helpers */,
 				6E7237A32014856C00068497 /* UserStories */,
 				6E7237DE2014B54800068497 /* Main.storyboard */,
 				6ED242E320132B7A0028F982 /* LaunchScreen.storyboard */,
@@ -542,6 +545,22 @@
 				6ED242E620132B7A0028F982 /* Info.plist */,
 			);
 			path = Plists;
+			sourceTree = "<group>";
+		};
+		6EF9C36D2015C450003C1A9E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6EF9C36E2015C462003C1A9E /* AlertBuilder */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6EF9C36E2015C462003C1A9E /* AlertBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				6EF9C36F2015C47D003C1A9E /* AlertBuilder.swift */,
+			);
+			path = AlertBuilder;
 			sourceTree = "<group>";
 		};
 		FFFFF555CD13669E955557F5 /* Frameworks */ = {
@@ -863,6 +882,7 @@
 				6E7237D32014A25A00068497 /* VenuesLaunchRouterInput.swift in Sources */,
 				6E7237B62014907600068497 /* SearchVenuesPresenter.swift in Sources */,
 				6E75407520136D1500F81751 /* LocationServiceOutput.swift in Sources */,
+				6EF9C3702015C47D003C1A9E /* AlertBuilder.swift in Sources */,
 				6E588DBD201392F0006F27E2 /* VenueLocation.swift in Sources */,
 				6E75406E20135A0200F81751 /* VenueServiceApiKeys.swift in Sources */,
 				6E7540542013398E00F81751 /* NetworkClient.swift in Sources */,
