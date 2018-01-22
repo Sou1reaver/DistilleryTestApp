@@ -27,4 +27,8 @@ extension SearchVenuesPresenter: SearchVenuesInteractorOutput {
         view?.updateStateWithVenues(venues)
     }
     
+    func locationServiceDidFailAuthorized() {
+        view?.showlocationServiceAuthorizedErrorAlert()
+    }
+    
 }

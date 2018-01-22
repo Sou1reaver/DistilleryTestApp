@@ -11,7 +11,6 @@ import Foundation
 
 protocol LocationServiceInput {
     var output: LocationServiceOutput? {get set}
-    func isLocationServiceEnabled() -> Bool
     func start()
     func stop() 
 }

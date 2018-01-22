@@ -11,4 +11,5 @@ import Foundation
 
 protocol SearchVenuesInteractorOutput: class {
     func didUpdateVenueList(venues: [Venue])
+    func locationServiceDidFailAuthorized()
 }

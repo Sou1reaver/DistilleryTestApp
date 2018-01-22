@@ -32,6 +32,12 @@ extension SearchVenuesViewController: SearchVenuesViewInput {
             self?.tableView.reloadData()
         }
     }
+    
+    func showlocationServiceAuthorizedErrorAlert() {
+        let title = "Open access to the geoposition for Test App, for showing venues near you"
+        let alert = AlertBuilder().createInfoAlert(title: title)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 

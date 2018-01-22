@@ -20,7 +20,6 @@ class SearchVenuesInteractor {
     
     private func createLocationService() -> LocationServiceInput {
         let locationService = LocationService()
-        locationService.requestAuthorization()
         locationService.output = self
         return locationService
     }
@@ -47,5 +46,9 @@ extension SearchVenuesInteractor: LocationServiceOutput {
     func locationService(_ service: LocationService, didUpdateLocation coordinate: LocationCoordinate) {
         getVenuesFor(coordinate: coordinate)
         locationService.stop()
+    }
+    
+    func locationServiceDidFailAuthorized() {
+        output?.locationServiceDidFailAuthorized()
     }
 }

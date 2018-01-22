@@ -24,23 +24,21 @@ class LocationService: NSObject {
 
 
 //MARK: - LocationServiceInput
-extension LocationService: LocationServiceInput {
-    func isLocationServiceEnabled() -> Bool {
+extension LocationService: LocationServiceInput {    
+    func start() {
         if CLLocationManager.locationServicesEnabled() {
             switch(CLLocationManager.authorizationStatus()) {
-            case .notDetermined, .restricted, .denied:
-                return false
+            case .notDetermined:
+                manager.requestWhenInUseAuthorization()
+            case .restricted, .denied:
+                output?.locationServiceDidFailAuthorized()
             case .authorizedAlways, .authorizedWhenInUse:
-                return true
+                self.manager.startUpdatingLocation()
             }
         } else {
             print("Location services are not enabled")
-            return false
+            output?.locationServiceDidFailAuthorized()
         }
-    }
-    
-    func start() {
-        self.manager.startUpdatingLocation()
     }
     
     func stop() {
@@ -60,8 +58,11 @@ extension LocationService: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways || status == .authorizedWhenInUse {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
             manager.startUpdatingLocation()
+        default:
+            output?.locationServiceDidFailAuthorized()
         }
     }
 }

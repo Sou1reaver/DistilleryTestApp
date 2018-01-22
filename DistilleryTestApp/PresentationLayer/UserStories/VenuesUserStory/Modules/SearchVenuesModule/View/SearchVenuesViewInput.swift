@@ -11,4 +11,5 @@ import Foundation
 
 protocol SearchVenuesViewInput: class {
     func updateStateWithVenues(_ venues: [Venue])
+    func showlocationServiceAuthorizedErrorAlert()
 }
