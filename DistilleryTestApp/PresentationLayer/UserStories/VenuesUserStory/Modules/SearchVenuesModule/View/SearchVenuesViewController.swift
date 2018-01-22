@@ -10,17 +10,19 @@ import UIKit
 
 class SearchVenuesViewController: BaseViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
     var output: SearchVenuesPresenterOutput?
     var venues = [Venue]()
-
+    
+    // MARK: - Life circle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         output?.setupView()
     }
-
-
 }
 
 
@@ -55,3 +57,19 @@ extension SearchVenuesViewController: UITableViewDataSource {
         return cell
     }
 }
+
+
+extension SearchVenuesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        output?.didTapVenueCell(with: venues[indexPath.row])
+    }
+}
+
+
+
+
+
+
+
+

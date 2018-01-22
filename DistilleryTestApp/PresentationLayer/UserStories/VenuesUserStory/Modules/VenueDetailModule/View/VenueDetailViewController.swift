@@ -11,17 +11,35 @@ import AlamofireImage
 
 class VenueDetailViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet weak var venueCategoryImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
+    private var tableViewHeaderHeight: CGFloat {
+        return 240
+    }
     var output: VenueDetailPresenterOutput?
     var venueDeails = [String]()
-
+    
+    
+    // MARK: - Life circle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         output?.setupView()
     }
-
-
+    
+    
+    // MARK: - Private methods
+    private func confgiureTableViewHeader(with imageUrl: String?) {
+        if let imageUrl = URL(string: ((imageUrl ?? ""))) {
+            venueCategoryImageView.af_setImage(withURL: imageUrl)
+            venueCategoryImageView.frame.size.height = tableViewHeaderHeight
+        } else {
+            venueCategoryImageView.frame.size.height = 0
+        }
+    }
 }
 
 
@@ -29,11 +47,7 @@ class VenueDetailViewController: UIViewController {
 extension VenueDetailViewController: VenueDetailViewInput {
     func updateStateWith(venueDeails: [String], imageUrl: String?) {
         self.venueDeails = venueDeails
-        if let imageUrl = URL(string: ((imageUrl ?? ""))) {
-            let imageView = UIImageView()
-            imageView.af_setImage(withURL: imageUrl)
-            tableView.tableHeaderView = UIImageView()
-        }
+        confgiureTableViewHeader(with: imageUrl)
         tableView.reloadData()
     }
 }
@@ -47,7 +61,7 @@ extension VenueDetailViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let id = String.init(describing: VenueDetailTableViewCell.self)
+        let id = String(describing: VenueDetailTableViewCell.self)
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! VenueDetailTableViewCell
         VenueDetailCellBuilder().configureCell(cell, with: venueDeails[indexPath.row])
         return cell

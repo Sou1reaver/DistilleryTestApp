@@ -14,8 +14,8 @@ struct VenuesLaunchRouter {
         return UIStoryboard(name: StoryboardNames.venues.rawValue, bundle: nil)
     }
     
-    private var searchVenuesViewController: ViewController? {
-        return venuesStoryboard.instantiateViewController(withIdentifier: String(describing: ViewController.self)) as? ViewController
+    private var searchVenuesViewController: DestinationViewController? {
+        return venuesStoryboard.instantiateViewController(withIdentifier: String(describing: DestinationViewController.self)) as? DestinationViewController
     }
     
     private var rootNavigationViewControler: UINavigationController? {
@@ -26,10 +26,10 @@ struct VenuesLaunchRouter {
 
 
 extension VenuesLaunchRouter: ModuleConfigurator {
-    typealias ViewController = SearchVenuesViewController
+    typealias DestinationViewController = SearchVenuesViewController
     typealias DestinationModuleData = [Venue]
     
-    internal func assembleModule(withData data: DestinationModuleData?) -> ViewController? {
+    internal func assembleModule(withData data: DestinationModuleData?) -> DestinationViewController? {
         guard let searchVenuesVC = searchVenuesViewController else {
             print("ViewController with this identifier not found")
             return nil
@@ -40,6 +40,7 @@ extension VenuesLaunchRouter: ModuleConfigurator {
         
         interactor.output = presenter
         presenter.view = searchVenuesVC
+        presenter.router = SearchVenuesRouter()
         presenter.interactor = interactor
         searchVenuesVC.output = presenter
         

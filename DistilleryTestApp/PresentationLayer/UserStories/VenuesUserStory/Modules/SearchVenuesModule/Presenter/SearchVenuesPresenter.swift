@@ -10,6 +10,7 @@ import Foundation
 
 
 class SearchVenuesPresenter {
+    var router: SearchVenuesRouterInput?
     var interactor: SearchVenuesInteractorInput?
     weak var view: SearchVenuesViewInput?
 }
@@ -38,5 +39,9 @@ extension SearchVenuesPresenter: SearchVenuesInteractorOutput {
     
     func locationServiceDidFailAuthorized() {
         view?.showlocationServiceAuthorizedErrorAlert()
+    }
+    
+    func didTapVenueCell(with venue: Venue) {
+        router?.openVenueDetailModule(from: view, with: venue)
     }
 }

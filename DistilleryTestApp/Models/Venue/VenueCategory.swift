@@ -16,7 +16,7 @@ struct VenueCategory: Decodable {
     var isPrimary: Bool?
     private var foursquareIcon: FoursquareIcon?
     var iconUrl: String {
-        return (foursquareIcon?.prefix ?? "")+(foursquareIcon?.suffix ?? "")
+        return (foursquareIcon?.prefix ?? "")+"88"+(foursquareIcon?.suffix ?? "")
     }
     
     enum CodingKeys: String, CodingKey {

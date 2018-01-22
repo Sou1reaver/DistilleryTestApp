@@ -57,6 +57,8 @@
 		6EF9C3922015FAE6003C1A9E /* VenueDetailPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C3912015FAE6003C1A9E /* VenueDetailPresenterOutput.swift */; };
 		6EF9C396201600E9003C1A9E /* VenueDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C395201600E9003C1A9E /* VenueDetailTableViewCell.swift */; };
 		6EF9C3982016049D003C1A9E /* VenueDetailCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C3972016049D003C1A9E /* VenueDetailCellBuilder.swift */; };
+		6EF9C39A20160C3D003C1A9E /* SearchVenuesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C39920160C3D003C1A9E /* SearchVenuesRouter.swift */; };
+		6EF9C39C20160C51003C1A9E /* SearchVenuesRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C39B20160C51003C1A9E /* SearchVenuesRouterInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		6EF9C3912015FAE6003C1A9E /* VenueDetailPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailPresenterOutput.swift; sourceTree = "<group>"; };
 		6EF9C395201600E9003C1A9E /* VenueDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailTableViewCell.swift; sourceTree = "<group>"; };
 		6EF9C3972016049D003C1A9E /* VenueDetailCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailCellBuilder.swift; sourceTree = "<group>"; };
+		6EF9C39920160C3D003C1A9E /* SearchVenuesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesRouter.swift; sourceTree = "<group>"; };
+		6EF9C39B20160C51003C1A9E /* SearchVenuesRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesRouterInput.swift; sourceTree = "<group>"; };
 		7DE3DB99C93EA8B3A9FEC592 /* Pods_DistilleryTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistilleryTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C9DC7B6FA2F0261B48F31F /* Pods-DistilleryTestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistilleryTestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DistilleryTestAppUITests/Pods-DistilleryTestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AB9E69FFED1EFDF5DA655E8E /* Pods-DistilleryTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistilleryTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DistilleryTestAppTests/Pods-DistilleryTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 		6E7237AC2014870200068497 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				6EF9C39920160C3D003C1A9E /* SearchVenuesRouter.swift */,
+				6EF9C39B20160C51003C1A9E /* SearchVenuesRouterInput.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -962,6 +968,7 @@
 				6ED242DB20132B7A0028F982 /* AppDelegate.swift in Sources */,
 				6E7540622013485600F81751 /* VenueServiceInput.swift in Sources */,
 				6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */,
+				6EF9C39C20160C51003C1A9E /* SearchVenuesRouterInput.swift in Sources */,
 				6E7237D82014A7E100068497 /* SearchVenueTableViewCell.swift in Sources */,
 				6EF9C3982016049D003C1A9E /* VenueDetailCellBuilder.swift in Sources */,
 				6E7237B220148D2200068497 /* SearchVenuesInteractorInput.swift in Sources */,
@@ -971,6 +978,7 @@
 				6E588DC120139B7D006F27E2 /* FoursquareIcon.swift in Sources */,
 				6E7540712013657C00F81751 /* LocationService.swift in Sources */,
 				6E7237D120149FA100068497 /* StoryboardNames.swift in Sources */,
+				6EF9C39A20160C3D003C1A9E /* SearchVenuesRouter.swift in Sources */,
 				6E75407320136B0600F81751 /* LocationServiceInput.swift in Sources */,
 				6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */,
 				6E7237D32014A25A00068497 /* VenuesLaunchRouterInput.swift in Sources */,
