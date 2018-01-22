@@ -58,6 +58,11 @@
 		6EF9C3982016049D003C1A9E /* VenueDetailCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C3972016049D003C1A9E /* VenueDetailCellBuilder.swift */; };
 		6EF9C39A20160C3D003C1A9E /* SearchVenuesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C39920160C3D003C1A9E /* SearchVenuesRouter.swift */; };
 		6EF9C39C20160C51003C1A9E /* SearchVenuesRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C39B20160C51003C1A9E /* SearchVenuesRouterInput.swift */; };
+		6EF9C3A120162202003C1A9E /* VenuesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C3A020162202003C1A9E /* VenuesMapViewController.swift */; };
+		6EF9C3A320162219003C1A9E /* VenuesMapModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C3A220162219003C1A9E /* VenuesMapModuleInput.swift */; };
+		6EF9C3A520162263003C1A9E /* VenuesMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C3A420162263003C1A9E /* VenuesMapPresenter.swift */; };
+		6EF9C3A7201622A3003C1A9E /* VenuesMapPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C3A6201622A3003C1A9E /* VenuesMapPresenterOutput.swift */; };
+		6EF9C3A92016231F003C1A9E /* VenuesMapViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9C3A82016231F003C1A9E /* VenuesMapViewInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +139,11 @@
 		6EF9C3972016049D003C1A9E /* VenueDetailCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailCellBuilder.swift; sourceTree = "<group>"; };
 		6EF9C39920160C3D003C1A9E /* SearchVenuesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesRouter.swift; sourceTree = "<group>"; };
 		6EF9C39B20160C51003C1A9E /* SearchVenuesRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuesRouterInput.swift; sourceTree = "<group>"; };
+		6EF9C3A020162202003C1A9E /* VenuesMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesMapViewController.swift; sourceTree = "<group>"; };
+		6EF9C3A220162219003C1A9E /* VenuesMapModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesMapModuleInput.swift; sourceTree = "<group>"; };
+		6EF9C3A420162263003C1A9E /* VenuesMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesMapPresenter.swift; sourceTree = "<group>"; };
+		6EF9C3A6201622A3003C1A9E /* VenuesMapPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesMapPresenterOutput.swift; sourceTree = "<group>"; };
+		6EF9C3A82016231F003C1A9E /* VenuesMapViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesMapViewInput.swift; sourceTree = "<group>"; };
 		7DE3DB99C93EA8B3A9FEC592 /* Pods_DistilleryTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DistilleryTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C9DC7B6FA2F0261B48F31F /* Pods-DistilleryTestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistilleryTestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DistilleryTestAppUITests/Pods-DistilleryTestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AB9E69FFED1EFDF5DA655E8E /* Pods-DistilleryTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DistilleryTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DistilleryTestAppTests/Pods-DistilleryTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				6E7237AA201486C100068497 /* SearchVenuesModule */,
+				6EF9C39D20162191003C1A9E /* VenuesMapModule */,
 				6EF9C3782015F1E8003C1A9E /* VenueDetailModule */,
 			);
 			path = Modules;
@@ -654,6 +665,34 @@
 			path = CellBuilder;
 			sourceTree = "<group>";
 		};
+		6EF9C39D20162191003C1A9E /* VenuesMapModule */ = {
+			isa = PBXGroup;
+			children = (
+				6EF9C39F201621D7003C1A9E /* Presenter */,
+				6EF9C39E201621D0003C1A9E /* View */,
+			);
+			path = VenuesMapModule;
+			sourceTree = "<group>";
+		};
+		6EF9C39E201621D0003C1A9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6EF9C3A020162202003C1A9E /* VenuesMapViewController.swift */,
+				6EF9C3A82016231F003C1A9E /* VenuesMapViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EF9C39F201621D7003C1A9E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6EF9C3A220162219003C1A9E /* VenuesMapModuleInput.swift */,
+				6EF9C3A420162263003C1A9E /* VenuesMapPresenter.swift */,
+				6EF9C3A6201622A3003C1A9E /* VenuesMapPresenterOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		FFFFF555CD13669E955557F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -955,6 +994,7 @@
 				6EF9C3772015E0F6003C1A9E /* BaseViewController.swift in Sources */,
 				6E7237C92014997300068497 /* VenuesLaunchRouter.swift in Sources */,
 				6E7237B02014877A00068497 /* SearchVenuesInteractor.swift in Sources */,
+				6EF9C3A520162263003C1A9E /* VenuesMapPresenter.swift in Sources */,
 				6E75406A20134EC700F81751 /* NetworkClientConstants.swift in Sources */,
 				6EF9C396201600E9003C1A9E /* VenueDetailTableViewCell.swift in Sources */,
 				6E7237DB2014B00C00068497 /* SearchVenueCellBuilder.swift in Sources */,
@@ -965,6 +1005,8 @@
 				6ED242DB20132B7A0028F982 /* AppDelegate.swift in Sources */,
 				6E7540622013485600F81751 /* VenueServiceInput.swift in Sources */,
 				6E75405C201346FB00F81751 /* VenueServiceUrlConstants.swift in Sources */,
+				6EF9C3A7201622A3003C1A9E /* VenuesMapPresenterOutput.swift in Sources */,
+				6EF9C3A320162219003C1A9E /* VenuesMapModuleInput.swift in Sources */,
 				6EF9C39C20160C51003C1A9E /* SearchVenuesRouterInput.swift in Sources */,
 				6E7237D82014A7E100068497 /* SearchVenueTableViewCell.swift in Sources */,
 				6EF9C3982016049D003C1A9E /* VenueDetailCellBuilder.swift in Sources */,
@@ -978,9 +1020,11 @@
 				6E75407320136B0600F81751 /* LocationServiceInput.swift in Sources */,
 				6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */,
 				6E7237D32014A25A00068497 /* VenuesLaunchRouterInput.swift in Sources */,
+				6EF9C3A120162202003C1A9E /* VenuesMapViewController.swift in Sources */,
 				6EF9C37D2015F26D003C1A9E /* VenueDetailViewController.swift in Sources */,
 				6E7237B62014907600068497 /* SearchVenuesPresenter.swift in Sources */,
 				6E75407520136D1500F81751 /* LocationServiceOutput.swift in Sources */,
+				6EF9C3A92016231F003C1A9E /* VenuesMapViewInput.swift in Sources */,
 				6EF9C3702015C47D003C1A9E /* AlertBuilder.swift in Sources */,
 				6E588DBD201392F0006F27E2 /* VenueLocation.swift in Sources */,
 				6E75406E20135A0200F81751 /* VenueServiceApiKeys.swift in Sources */,
