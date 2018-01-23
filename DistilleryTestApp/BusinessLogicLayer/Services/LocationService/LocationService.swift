@@ -27,6 +27,7 @@ class LocationService: NSObject {
 extension LocationService: LocationServiceInput {    
     func start() {
         if CLLocationManager.locationServicesEnabled() {
+            manager.startUpdatingLocation()
             switch(CLLocationManager.authorizationStatus()) {
             case .notDetermined:
                 manager.requestWhenInUseAuthorization()

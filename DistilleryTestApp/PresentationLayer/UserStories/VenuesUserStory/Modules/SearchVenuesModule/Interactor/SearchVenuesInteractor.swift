@@ -28,11 +28,11 @@ class SearchVenuesInteractor {
         output?.didStartUpdateVenue()
         venueService.getVenuesFor(coordinate: coordinate,
                                   inRadius: radius,
-                                  success: {[weak self] (venues) in
+                                  success: { [weak self] (venues) in
                                     self?.output?.didUpdateVenueList(venues: venues)
         },
-                                  failure: { (error) in
-                                    self.output?.venuesRequestDidFail(error)
+                                  failure: { [weak self] (error) in
+                                    self?.output?.venuesRequestDidFail(error)
         })
         
     }
