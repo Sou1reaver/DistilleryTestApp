@@ -39,7 +39,6 @@ class VenuesMapViewController: UIViewController {
 // MARK: - VenuesMapViewInput
 extension VenuesMapViewController: VenuesMapViewInput {
     func updateStateWith(_ venueAnnotations: [VenueAnnotation]) {
-        mapView.addAnnotations(venueAnnotations)
         mapView.showAnnotations(venueAnnotations, animated: true)
     }
 }

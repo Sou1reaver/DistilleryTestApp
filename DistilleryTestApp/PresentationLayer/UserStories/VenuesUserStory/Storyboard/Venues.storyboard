@@ -154,16 +154,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QcL-4h-OKR" firstAttribute="leading" secondItem="hNC-CT-kdA" secondAttribute="leading" id="0PM-xd-U7E"/>
+                            <constraint firstItem="QcL-4h-OKR" firstAttribute="leading" secondItem="Afx-WV-tS9" secondAttribute="leading" id="0PM-xd-U7E"/>
                             <constraint firstItem="WTU-8Y-l7R" firstAttribute="top" secondItem="Afx-WV-tS9" secondAttribute="top" id="Drg-zT-IDg"/>
                             <constraint firstItem="WTU-8Y-l7R" firstAttribute="leading" secondItem="hNC-CT-kdA" secondAttribute="leading" id="Ga8-E9-57k"/>
                             <constraint firstItem="hNC-CT-kdA" firstAttribute="trailing" secondItem="WTU-8Y-l7R" secondAttribute="trailing" id="Jwq-Zs-ffd"/>
                             <constraint firstItem="LZt-lQ-qOW" firstAttribute="leading" secondItem="hNC-CT-kdA" secondAttribute="leading" id="LDc-jn-nSe"/>
                             <constraint firstItem="WTU-8Y-l7R" firstAttribute="bottom" secondItem="LZt-lQ-qOW" secondAttribute="bottom" id="Lp1-mY-D8k"/>
-                            <constraint firstItem="hNC-CT-kdA" firstAttribute="trailing" secondItem="QcL-4h-OKR" secondAttribute="trailing" id="OnC-fe-e5e"/>
+                            <constraint firstAttribute="trailing" secondItem="QcL-4h-OKR" secondAttribute="trailing" id="OnC-fe-e5e"/>
                             <constraint firstItem="hNC-CT-kdA" firstAttribute="trailing" secondItem="LZt-lQ-qOW" secondAttribute="trailing" id="ZeA-CI-XWy"/>
                             <constraint firstItem="LZt-lQ-qOW" firstAttribute="top" secondItem="hNC-CT-kdA" secondAttribute="top" id="gzR-0p-fHu"/>
-                            <constraint firstItem="QcL-4h-OKR" firstAttribute="height" secondItem="Afx-WV-tS9" secondAttribute="height" id="q2O-3n-UsY"/>
                             <constraint firstAttribute="bottom" secondItem="QcL-4h-OKR" secondAttribute="bottom" id="vJb-SZ-wGO"/>
                             <constraint firstItem="QcL-4h-OKR" firstAttribute="top" secondItem="Afx-WV-tS9" secondAttribute="top" id="zQZ-dD-clk"/>
                         </constraints>

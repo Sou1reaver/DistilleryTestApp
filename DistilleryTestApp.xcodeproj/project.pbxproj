@@ -239,8 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				6E7237AA201486C100068497 /* SearchVenuesModule */,
-				6EF9C39D20162191003C1A9E /* VenuesMapModule */,
 				6EF9C3782015F1E8003C1A9E /* VenueDetailModule */,
+				6EF9C39D20162191003C1A9E /* VenuesMapModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
