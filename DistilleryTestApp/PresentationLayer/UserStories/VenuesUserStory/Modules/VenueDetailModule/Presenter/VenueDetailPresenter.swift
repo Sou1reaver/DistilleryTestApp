@@ -11,6 +11,7 @@ import Foundation
 
 class VenueDetailPresenter {
     private var venue: Venue?
+    var router: VenueDetailRouterInput?
     weak var view: VenueDetailViewInput?
     
     private func getVenueDetails(_ venue: Venue) -> [String] {
@@ -36,6 +37,11 @@ extension VenueDetailPresenter: VenueDetailPresenterOutput {
         guard let `venue` = venue else { return }
         let venueDeails = getVenueDetails(venue)
         view?.updateStateWith(venueDeails: venueDeails, imageUrl: venue.primaryCategory?.iconUrl)
+    }
+    
+    func didTapMapButton() {
+        guard let `venue` = venue else { return }
+        router?.openVenuesMapModule(from: view, with: venue)
     }
 }
 

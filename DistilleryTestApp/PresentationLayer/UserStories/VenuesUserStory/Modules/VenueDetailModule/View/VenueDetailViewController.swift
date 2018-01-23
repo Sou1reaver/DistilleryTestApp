@@ -40,6 +40,12 @@ class VenueDetailViewController: UIViewController {
             venueCategoryImageView.frame.size.height = 0
         }
     }
+    
+    
+    // MARK: - Actions
+    @IBAction func mapButtonDidTap(_ sender: UIBarButtonItem) {
+        output?.didTapMapButton()
+    }
 }
 
 

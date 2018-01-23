@@ -34,6 +34,7 @@ extension VenueDetailModuleAssembly: ModuleAssembly {
             presenter.configureCurrentModule(with: venue)
         }
         presenter.view = venueDetailVC
+        presenter.router = VenueDetailRouter()
         venueDetailVC.output = presenter
         
         return venueDetailVC
