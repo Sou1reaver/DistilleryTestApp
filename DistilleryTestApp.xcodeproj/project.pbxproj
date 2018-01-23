@@ -42,6 +42,9 @@
 		6E75407320136B0600F81751 /* LocationServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75407220136B0600F81751 /* LocationServiceInput.swift */; };
 		6E75407520136D1500F81751 /* LocationServiceOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75407420136D1500F81751 /* LocationServiceOutput.swift */; };
 		6E7540782013714900F81751 /* LocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7540772013714900F81751 /* LocationCoordinate.swift */; };
+		6EBC42EF201725670045883B /* VenueDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC42EE201725670045883B /* VenueDetailRouter.swift */; };
+		6EBC42F420172FA60045883B /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC42F320172FA60045883B /* BaseRouter.swift */; };
+		6EBC42F620174D7E0045883B /* VenueDetailRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC42F520174D7E0045883B /* VenueDetailRouterInput.swift */; };
 		6ED242DB20132B7A0028F982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED242DA20132B7A0028F982 /* AppDelegate.swift */; };
 		6ED242E220132B7A0028F982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED242E120132B7A0028F982 /* Assets.xcassets */; };
 		6ED242E520132B7A0028F982 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED242E320132B7A0028F982 /* LaunchScreen.storyboard */; };
@@ -122,6 +125,9 @@
 		6E75407220136B0600F81751 /* LocationServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceInput.swift; sourceTree = "<group>"; };
 		6E75407420136D1500F81751 /* LocationServiceOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceOutput.swift; sourceTree = "<group>"; };
 		6E7540772013714900F81751 /* LocationCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinate.swift; sourceTree = "<group>"; };
+		6EBC42EE201725670045883B /* VenueDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailRouter.swift; sourceTree = "<group>"; };
+		6EBC42F320172FA60045883B /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		6EBC42F520174D7E0045883B /* VenueDetailRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailRouterInput.swift; sourceTree = "<group>"; };
 		6ED242D720132B7A0028F982 /* DistilleryTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistilleryTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED242DA20132B7A0028F982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED242E120132B7A0028F982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -427,6 +433,23 @@
 			path = LocationService;
 			sourceTree = "<group>";
 		};
+		6EBC42F02017256D0045883B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				6EBC42EE201725670045883B /* VenueDetailRouter.swift */,
+				6EBC42F520174D7E0045883B /* VenueDetailRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		6EBC42F220172F8B0045883B /* BaseRouter */ = {
+			isa = PBXGroup;
+			children = (
+				6EBC42F320172FA60045883B /* BaseRouter.swift */,
+			);
+			path = BaseRouter;
+			sourceTree = "<group>";
+		};
 		6ED242CE20132B7A0028F982 = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +546,7 @@
 		6ED2430D20132E0F0028F982 /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				6EBC42F220172F8B0045883B /* BaseRouter */,
 				6E7237CA20149A2D00068497 /* ModuleAssembly */,
 				6E7540522013368900F81751 /* NetworkCore */,
 			);
@@ -634,6 +658,7 @@
 		6EF9C3782015F1E8003C1A9E /* VenueDetailModule */ = {
 			isa = PBXGroup;
 			children = (
+				6EBC42F02017256D0045883B /* Router */,
 				6EF9C3B220163707003C1A9E /* Assembly */,
 				6EF9C37A2015F215003C1A9E /* Presenter */,
 				6EF9C37B2015F21A003C1A9E /* View */,
@@ -1064,10 +1089,13 @@
 				6E588DC120139B7D006F27E2 /* FoursquareIcon.swift in Sources */,
 				6E7540712013657C00F81751 /* LocationService.swift in Sources */,
 				6EF9C3AB20162B55003C1A9E /* VenueAnnotation.swift in Sources */,
+				6EBC42EF201725670045883B /* VenueDetailRouter.swift in Sources */,
 				6E7237D120149FA100068497 /* StoryboardNames.swift in Sources */,
 				6EF9C39A20160C3D003C1A9E /* SearchVenuesRouter.swift in Sources */,
 				6E75407320136B0600F81751 /* LocationServiceInput.swift in Sources */,
+				6EBC42F620174D7E0045883B /* VenueDetailRouterInput.swift in Sources */,
 				6E75405620133F0100F81751 /* NetworkClientInput.swift in Sources */,
+				6EBC42F420172FA60045883B /* BaseRouter.swift in Sources */,
 				6EF9C3AE20162CA5003C1A9E /* VenueAnnotationFactory.swift in Sources */,
 				6E7237D32014A25A00068497 /* VenuesLaunchRouterInput.swift in Sources */,
 				6EF9C3A120162202003C1A9E /* VenuesMapViewController.swift in Sources */,

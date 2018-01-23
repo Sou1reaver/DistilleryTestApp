@@ -9,10 +9,11 @@
 import UIKit
 
 
-struct VenuesLaunchRouter {
-    private var rootNavigationViewControler: UINavigationController? {
+struct VenuesLaunchRouter: BaseRouter {
+    typealias SourceViewController = UINavigationController
+    private var rootNavigationViewControler: SourceViewController? {
         let window = (UIApplication.shared.delegate as? AppDelegate)?.window
-        return window?.rootViewController as? UINavigationController
+        return window?.rootViewController as? SourceViewController
     }
 }
 
@@ -20,13 +21,13 @@ struct VenuesLaunchRouter {
 // MARK: - VenuesLaunchRouterInput
 extension VenuesLaunchRouter: VenuesLaunchRouterInput {
     func openSearchVenuesModule() {
-        guard let module = SearchVenuesModuleAssembly().assembleModule(withData: nil) else {
-            print("Assemble search venues module error")
-            return
-        }
-        DispatchQueue.main.async {
-            self.rootNavigationViewControler?.setViewControllers([module], animated: false)
-        }
-        
+        let module = SearchVenuesModuleAssembly().assembleModule(withData: nil)
+        openModule(module,
+                   from: rootNavigationViewControler,
+                   transitionClosure: { (source, destination) in
+                    source.setViewControllers([destination], animated: false)
+        })        
     }
 }
+
+

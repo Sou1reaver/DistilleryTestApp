@@ -10,9 +10,8 @@ import UIKit
 
 
 protocol ModuleAssembly {
-    associatedtype DestinationViewController
     associatedtype DestinationModuleData
-    func assembleModule(withData data: DestinationModuleData?) -> DestinationViewController?
+    func assembleModule(withData data: DestinationModuleData?) -> UIViewController?
 }
 
 

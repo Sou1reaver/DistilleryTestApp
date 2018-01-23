@@ -16,7 +16,6 @@ class VenuesMapViewController: UIViewController {
     
     // MARK: - Properties
     var output: VenuesMapPresenterOutput?
-    var venueAnnotations = [VenueAnnotation]()
     private var annotationId: String {
         return String(describing: VenueAnnotation.self)
     }
@@ -26,7 +25,6 @@ class VenuesMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureMapView()
         output?.setupView()
     }
     
@@ -35,11 +33,6 @@ class VenuesMapViewController: UIViewController {
     @IBAction func closeButtonDidTap(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
-    // MARK: - private methods
-    func configureMapView() {
-        mapView.userTrackingMode = .follow
-    }
 }
 
 
@@ -47,23 +40,8 @@ class VenuesMapViewController: UIViewController {
 extension VenuesMapViewController: VenuesMapViewInput {
     func updateStateWith(_ venueAnnotations: [VenueAnnotation]) {
         mapView.addAnnotations(venueAnnotations)
-        DispatchQueue.main.async { [weak self] in
-            self?.mapView.reloadInputViews()
-        }
+        mapView.showAnnotations(venueAnnotations, animated: true)
     }
 }
 
 
-// MARK: - MKMapViewDelegate
-extension VenuesMapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var view : MKPinAnnotationView
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) as? MKPinAnnotationView {
-            view = dequeuedView
-            view.annotation = annotation
-        } else { 
-            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
-        }
-        return view
-    }
-}

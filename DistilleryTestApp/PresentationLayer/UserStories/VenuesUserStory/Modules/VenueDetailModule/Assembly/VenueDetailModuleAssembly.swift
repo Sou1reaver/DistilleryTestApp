@@ -14,17 +14,16 @@ struct VenueDetailModuleAssembly {
         return UIStoryboard(name: StoryboardNames.venues.rawValue, bundle: nil)
     }
     
-    private var venueDetailViewController: DestinationViewController? {
-        return venuesStoryboard.instantiateViewController(withIdentifier: String(describing: DestinationViewController.self)) as? DestinationViewController
+    private var venueDetailViewController: VenueDetailViewController? {
+        return venuesStoryboard.instantiateViewController(withIdentifier: String(describing: VenueDetailViewController.self)) as? VenueDetailViewController
     }
 }
 
 
 extension VenueDetailModuleAssembly: ModuleAssembly {
-    typealias DestinationViewController = VenueDetailViewController
     typealias DestinationModuleData = Venue
     
-    internal func assembleModule(withData data: DestinationModuleData?) -> DestinationViewController? {
+    internal func assembleModule(withData data: DestinationModuleData?) -> UIViewController? {
         guard let venueDetailVC = venueDetailViewController else {
             print("ViewController with this identifier not found")
             return nil

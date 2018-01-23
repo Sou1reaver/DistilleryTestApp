@@ -10,31 +10,30 @@ import UIKit
 
 
 
-struct SearchVenuesRouter {
-
+struct SearchVenuesRouter: BaseRouter {
+    typealias SourceViewController = UIViewController
 }
 
 
+// MARK: - SearchVenuesRouterInput
 extension SearchVenuesRouter: SearchVenuesRouterInput {
     func openVenuesMapModule(from view: SearchVenuesViewInput?, with venues: [Venue]) {
-        guard let module = VenuesMapModuleAssembly().assembleModule(withData: venues) else {
-            print("Assemble search venues module error")
-            return
-        }
         let viewController = view as? UIViewController
-        DispatchQueue.main.async {
-            viewController?.present(module, animated: true, completion: nil)
-        }
+        let module = VenuesMapModuleAssembly().assembleModule(withData: venues)
+        openModule(module,
+                   from: viewController,
+                   transitionClosure: { (source, destination) in
+                    source.present(destination, animated: true, completion: nil)
+        })
     }
     
     func openVenueDetailModule(from view: SearchVenuesViewInput?, with venue: Venue) {
-        guard let module = VenueDetailModuleAssembly().assembleModule(withData: venue) else {
-            print("Assemble search venues module error")
-            return
-        }
         let viewController = view as? UIViewController
-        DispatchQueue.main.async {
-            viewController?.navigationController?.pushViewController(module, animated: true)
-        }
+        let module = VenueDetailModuleAssembly().assembleModule(withData: venue)
+        openModule(module,
+                   from: viewController,
+                   transitionClosure: { (source, destination) in
+                    source.navigationController?.pushViewController(destination, animated: true)
+        })
     }
 }
