@@ -1,14 +1,14 @@
 //
-//  VenuesMapPresenterOutput.swift
+//  VenuesMapViewOutput.swift
 //  DistilleryTestApp
 //
-//  Created by Vladimir Gordienko on 22.01.18.
+//  Created by Vladimir Gordienko on 24.01.18.
 //  Copyright © 2018 Vladimir Gordienko. All rights reserved.
 //
 
 import Foundation
 
 
-protocol VenuesMapPresenterOutput {
+protocol VenuesMapViewOutput {
     func setupView()
 }

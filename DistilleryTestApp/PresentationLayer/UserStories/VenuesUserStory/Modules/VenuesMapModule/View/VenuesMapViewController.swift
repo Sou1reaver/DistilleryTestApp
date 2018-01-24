@@ -15,7 +15,7 @@ class VenuesMapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     // MARK: - Properties
-    var output: VenuesMapPresenterOutput?
+    var output: VenuesMapViewOutput?
     private var annotationId: String {
         return String(describing: VenueAnnotation.self)
     }

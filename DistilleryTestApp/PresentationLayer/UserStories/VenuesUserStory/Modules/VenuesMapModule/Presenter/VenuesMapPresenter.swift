@@ -15,7 +15,7 @@ class VenuesMapPresenter {
 
 
 // MARK: - VenuesMapPresenterOutput
-extension VenuesMapPresenter: VenuesMapPresenterOutput {
+extension VenuesMapPresenter: VenuesMapViewOutput {
     func setupView() {
         guard let venues = venues else { return }
         let annotations = VenueAnnotationFactory().getVenueAnnotations(from: venues)

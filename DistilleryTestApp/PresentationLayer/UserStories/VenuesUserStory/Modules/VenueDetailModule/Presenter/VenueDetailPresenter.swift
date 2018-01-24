@@ -32,7 +32,7 @@ class VenueDetailPresenter {
 
 
 // MARK: - VenueDetailPresenterOutput
-extension VenueDetailPresenter: VenueDetailPresenterOutput {
+extension VenueDetailPresenter: VenueDetailViewOutput {
     func setupView() {
         guard let `venue` = venue else { return }
         let venueDeails = getVenueDetails(venue)

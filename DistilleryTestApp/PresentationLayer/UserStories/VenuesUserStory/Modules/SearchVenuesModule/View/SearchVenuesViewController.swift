@@ -15,7 +15,7 @@ class SearchVenuesViewController: BaseViewController {
     @IBOutlet weak var mapButton: UIBarButtonItem!
     
     // MARK: - Properties
-    var output: SearchVenuesPresenterOutput?
+    var output: SearchVenuesViewOutput?
     var venues = [Venue]()
     
     // MARK: - Life circle

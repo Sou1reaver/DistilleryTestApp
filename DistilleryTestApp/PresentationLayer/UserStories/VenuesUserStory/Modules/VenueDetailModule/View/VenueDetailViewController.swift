@@ -19,7 +19,7 @@ class VenueDetailViewController: UIViewController {
     private var tableViewHeaderHeight: CGFloat {
         return 240
     }
-    var output: VenueDetailPresenterOutput?
+    var output: VenueDetailViewOutput?
     var venueDeails = [String]()
     
     

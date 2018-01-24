@@ -1,14 +1,15 @@
 //
-//  VenueDetailPresenterOutput.swift
+//  VenueDetailViewOutput.swift
 //  DistilleryTestApp
 //
-//  Created by Vladimir Gordienko on 22.01.18.
+//  Created by Vladimir Gordienko on 24.01.18.
 //  Copyright © 2018 Vladimir Gordienko. All rights reserved.
 //
 
 import Foundation
 
-protocol VenueDetailPresenterOutput {
+
+protocol VenueDetailViewOutput {
     func setupView()
     func didTapMapButton()
 }

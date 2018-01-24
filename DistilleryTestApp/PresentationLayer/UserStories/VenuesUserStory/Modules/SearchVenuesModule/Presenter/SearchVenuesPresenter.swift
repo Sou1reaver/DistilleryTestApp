@@ -17,7 +17,7 @@ class SearchVenuesPresenter {
 
 
 // MARK: - SearchVenuesPresenterOutput
-extension SearchVenuesPresenter: SearchVenuesPresenterOutput {
+extension SearchVenuesPresenter: SearchVenuesViewOutput {
     func setupView() {
         interactor?.updateVenues()
     }
