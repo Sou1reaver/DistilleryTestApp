@@ -6,9 +6,8 @@
 //  Copyright © 2018 Vladimir Gordienko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 protocol VenuesLaunchRouterInput {
-    func openSearchVenuesModule()
-}
+    func openSearchVenuesModule(with navigationController: UINavigationController)}
