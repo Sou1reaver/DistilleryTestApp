@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct VenueDetailCellBuilder {
+class VenueDetailCellBuilder {
     func configureCell(_ cell: VenueDetailTableViewCell, with title: String) {
         cell.titleLabel.text = title
     }

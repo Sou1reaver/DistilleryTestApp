@@ -658,8 +658,8 @@
 		6EF9C3782015F1E8003C1A9E /* VenueDetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				6EBC42F02017256D0045883B /* Router */,
 				6EF9C3B220163707003C1A9E /* Assembly */,
+				6EBC42F02017256D0045883B /* Router */,
 				6EF9C37A2015F215003C1A9E /* Presenter */,
 				6EF9C37B2015F21A003C1A9E /* View */,
 			);

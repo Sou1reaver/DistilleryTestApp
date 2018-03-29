@@ -20,7 +20,9 @@ class VenueDetailViewController: UIViewController {
         return 240
     }
     var output: VenueDetailViewOutput?
-    var venueDeails = [String]()
+    private var venueDeails = [String]()
+    private lazy var venueDetailCellBuilder = VenueDetailCellBuilder()
+    private let venueDetailTableViewCellId = String(describing: VenueDetailTableViewCell.self)
     
     
     // MARK: - Life circle
@@ -67,9 +69,8 @@ extension VenueDetailViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let id = String(describing: VenueDetailTableViewCell.self)
-        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! VenueDetailTableViewCell
-        VenueDetailCellBuilder().configureCell(cell, with: venueDeails[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: venueDetailTableViewCellId, for: indexPath) as! VenueDetailTableViewCell
+        venueDetailCellBuilder.configureCell(cell, with: venueDeails[indexPath.row])
         return cell
     }
 }

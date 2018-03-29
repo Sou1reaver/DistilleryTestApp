@@ -9,7 +9,7 @@
 import UIKit
 
 
-struct VenueDetailModuleAssembly {
+class VenueDetailModuleAssembly {
     private var venuesStoryboard: UIStoryboard {
         return UIStoryboard(name: StoryboardNames.venues.rawValue, bundle: nil)
     }

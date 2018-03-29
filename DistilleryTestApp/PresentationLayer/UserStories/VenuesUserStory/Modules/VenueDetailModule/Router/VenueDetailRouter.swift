@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct VenueDetailRouter: BaseRouter {
+class VenueDetailRouter: BaseRouter {
     typealias SourceViewController = UIViewController
 }
 
