@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct SearchVenueCellBuilder {
+class SearchVenueCellBuilder {
     func configureCell(_ cell: SearchVenueTableViewCell, with venue: Venue) {
         cell.titleLabel.text = venue.name
         cell.categoryTitleLabel.text = venue.primaryCategory?.name

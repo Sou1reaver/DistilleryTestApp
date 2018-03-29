@@ -10,7 +10,7 @@ import UIKit
 
 
 
-struct SearchVenuesRouter: BaseRouter {
+class SearchVenuesRouter: BaseRouter {
     typealias SourceViewController = UIViewController
 }
 

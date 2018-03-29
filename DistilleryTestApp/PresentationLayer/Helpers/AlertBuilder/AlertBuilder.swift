@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct AlertBuilder {
+class AlertBuilder {
     func createInfoAlert(title: String) -> UIAlertController {
         let title = title
         let alertVC = UIAlertController(title: title, message: nil, preferredStyle: .alert)

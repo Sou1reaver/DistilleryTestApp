@@ -11,12 +11,14 @@ import UIKit
 class SearchVenuesViewController: BaseViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var mapButton: UIBarButtonItem!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var mapButton: UIBarButtonItem!
     
     // MARK: - Properties
     var output: SearchVenuesViewOutput?
-    var venues = [Venue]()
+    private var venues = [Venue]()
+    private lazy var searchVenueCellBuilder = SearchVenueCellBuilder()
+    private let searchVenueTableViewCellId = String(describing: SearchVenueTableViewCell.self)
     
     // MARK: - Life circle
     override func viewDidLoad() {
@@ -59,9 +61,8 @@ extension SearchVenuesViewController: UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let id = String.init(describing: SearchVenueTableViewCell.self)
-        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! SearchVenueTableViewCell
-        SearchVenueCellBuilder().configureCell(cell, with: venues[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: searchVenueTableViewCellId, for: indexPath) as! SearchVenueTableViewCell
+        searchVenueCellBuilder.configureCell(cell, with: venues[indexPath.row])
         return cell
     }
 }
