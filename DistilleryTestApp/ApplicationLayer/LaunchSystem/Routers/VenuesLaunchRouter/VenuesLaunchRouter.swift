@@ -9,7 +9,7 @@
 import UIKit
 
 
-struct VenuesLaunchRouter: BaseRouter {
+class VenuesLaunchRouter: BaseRouter {
     typealias SourceViewController = UINavigationController
 }
 

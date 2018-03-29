@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-struct NetworkClient {
+class NetworkClient {
     private var responceQueue: DispatchQueue {
         return DispatchQueue(label: "response-queue", qos: .utility, attributes: [.concurrent])
     }
