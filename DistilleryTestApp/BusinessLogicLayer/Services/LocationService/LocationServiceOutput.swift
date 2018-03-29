@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-protocol LocationServiceOutput {
-    mutating func locationService(_ service: LocationService, didUpdateLocation coordinate: LocationCoordinate)
+protocol LocationServiceOutput: class {
+    func locationService(_ service: LocationService, didUpdateLocation coordinate: LocationCoordinate)
     func locationServiceDidFailAuthorized()
 }

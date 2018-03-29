@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-struct VenueService {
+class VenueService {
     private let networkClient: NetworkClientInput
     private var venuesSearchUrl: String {
         return  VenueServiceUrlConstants.baseUrl.rawValue +
